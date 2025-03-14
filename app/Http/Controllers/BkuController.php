@@ -38,6 +38,10 @@ class BkuController extends Controller
             'breadcumd1'           => 'Penerimaan',
             'breadcumd2'           => 'BKU',
             'userx'                => UserModel::where('id',$userId)->first(['fullname','role','gambar',]),
+            'total_mar_mandiri'    => bkusModel::where('id_bank', '1')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-03-01', '2025-03-31'])->sum('nilai_transaksi'),
+            'total_mar_bpd'        => bkusModel::where('id_bank', '2')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-03-01', '2025-03-31'])->sum('nilai_transaksi'),
+            'total_mar_btn'        => bkusModel::where('id_bank', '3')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-03-01', '2025-03-31'])->sum('nilai_transaksi'),
+            'total_mar'            => bkusModel::whereBetween('tb_transaksi.tgl_transaksi', ['2025-03-01', '2025-03-31'])->sum('nilai_transaksi'),
         );
 
         if ($request->ajax()) {

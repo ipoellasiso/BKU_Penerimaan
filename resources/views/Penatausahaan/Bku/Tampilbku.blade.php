@@ -35,488 +35,7 @@
                         </table>
                     @endif
 
-                    <div class="row">
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Januari</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Februari</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Maret</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">April</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mei</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Juni</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Juli</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Agustus</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">September</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Oktober</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">November</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Desember</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">Mandiri</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BPD</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="m-b-0">BTN</p>
-                                            <div id="total_pajak"></div>
-                                    </div>
-                                    <div>
-                                        <p class="m-b-0">Rp. 950.000.000.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="d-flex flex-row">
                         {{-- <h4 class="card-title">{{ $title }}</h4> --}}
@@ -552,6 +71,489 @@
                                 </tr>
                             </thead>
                         </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Januari</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Februari</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Maret</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0">Rp. {{ number_format($total_mar) }}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0">Rp. {{ number_format($total_mar_mandiri) }}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0">Rp. {{ number_format($total_mar_bpd) }}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0">Rp. {{ number_format($total_mar_btn) }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">April</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mei</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Juni</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Juli</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Agustus</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">September</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Oktober</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">November</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Desember</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">Mandiri</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BPD</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <p class="m-b-0">BTN</p>
+                                            <div id="total_pajak"></div>
+                                    </div>
+                                    <div>
+                                        <p class="m-b-0"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
