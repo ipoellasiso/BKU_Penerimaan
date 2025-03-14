@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\BkuImport;
+use App\Imports\BkusImport;
 use App\Models\AkunpajakModel;
-use App\Models\bkuModel;
+use App\Models\BkuModel;
+use App\Models\bkusModel;
 use App\Models\Potongan2Model;
 use App\Models\PotonganModel;
 use App\Models\UserModel;
@@ -124,8 +127,8 @@ class BkuController extends Controller
         $bkuId_potonganls = $request->id_potonganls;
         $bkuebilling = $request->id_potonganls;
 
-        $cek_ebilling = bkuModel::where('ebilling', $request->ebilling)->where('id', '!=', $request->id)->first();
-        $cek_ntppn = bkuModel::where('ntpn', $request->ntpn)->where('id', '!=', $request->id)->first();
+        $cek_ebilling = bkusModel::where('ebilling', $request->ebilling)->where('id', '!=', $request->id)->first();
+        $cek_ntppn = bkusModel::where('ntpn', $request->ntpn)->where('id', '!=', $request->id)->first();
 
         if($cek_ebilling)
         {
@@ -178,8 +181,8 @@ class BkuController extends Controller
             }
         }
 
-            bkuModel::updateOrCreate(['id' => $bkuId], $detailsbku);
-            Potongan2Model::updateOrCreate(['id' => $bkuId], $detailspotongan2);
+        bkusModel::updateOrCreate(['id' => $bkuId], $detailsbku);
+            // Potongan2Model::updateOrCreate(['id' => $bkuId], $detailspotongan2);
             // PotonganModel::updateOrCreate(['id' => $bkuId_potonganls], $detailspotongan);
             return response()->json(['success' =>'Data Berhasil Disimpan']);
         
@@ -191,10 +194,10 @@ class BkuController extends Controller
             'bukti_pemby' => 'image|mimes:png,jpg,jpeg,gif,svg|max:5000',
         ]);
 
-        $bku = bkuModel::where('id', $id)->first();
+        $bku = bkusModel::where('id', $id)->first();
 
-        $cek_ebilling = bkuModel::where('ebilling', $request->ebilling)->where('id', '!=', $request->id)->first();
-        $cek_ntppn = bkuModel::where('ntpn', $request->ntpn)->where('id', '!=', $request->id)->first();
+        $cek_ebilling = bkusModel::where('ebilling', $request->ebilling)->where('id', '!=', $request->id)->first();
+        $cek_ntppn = bkusModel::where('ntpn', $request->ntpn)->where('id', '!=', $request->id)->first();
 
         if($cek_ebilling)
         {
@@ -206,20 +209,12 @@ class BkuController extends Controller
         }
         else
         {
-            PotonganModel::where('ebilling',$request->get('ebilling'))
-                        ->update([
-                            'status1' => '1',
-                            'id_pajakkpp' => $request->id_potonganls,
-                            'ebilling' => $request->ebilling,
-                        ]);
-
-            // $detailspotongan2 = [
-            //     'status1' => '1',
-            //     'id_pajakkpp' => $request->id,
-            //     'ebilling' => $request->ebilling,
-            //     // 'jenis_pajak' => $request->jenis_pajak,
-            //     // 'nilai_pajak' =>str_replace('.','', $request->nilai_pajak),
-            // ];
+            // BkuImport::where('ebilling',$request->get('ebilling'))
+            //             ->update([
+            //                 'status1' => '1',
+            //                 'id_pajakkpp' => $request->id_potonganls,
+            //                 'ebilling' => $request->ebilling,
+            //             ]);
 
             $bku->update([
                 'ebilling' => $request->ebilling, 
@@ -283,59 +278,32 @@ class BkuController extends Controller
     public function editbku($id)
     {
         $where = array('id' => $id);
-        $bku = bkuModel::where($where)->first();
+        $bku = bkusModel::where($where)->first();
 
         return response()->json($bku);
     }
 
-    public function editbkusipd($id)
+    public function import(Request $request)
     {
-        $where = array('id' => $id);
-        $bkusipd = PotonganModel::where($where)->first();
+        $file = $request->file('file')->store('public/import');
+        $import = new BkusImport();
+        $import->import($file);
 
-        return response()->json($bkusipd);
-    }
+        // dd($import->failures());
+        if ($import->failures()->isNotEmpty())
+        {
+            return back()->withFailures($import->failures())->with('error', 'beberapa data sudah ada dan data belum ada akan disimpan ');
+        }
 
-    // public function getDataakunpajak()
-    // {
-    //     $akunpajak = DB::table('tb_akun_pajak')
-    //     ->select('id', 'akun_pajak')
-    //     ->get();
-    //     return response()->json($akunpajak);
-    //     // return view('Penatausahaan.bku.bku', compact('akunpajak'));
-    // }
-
-    public function tolak(Request $request, $id)
-    {
-        // $where = array('id_pajakkpp' => $id);
-
-        $bkudt = bkuModel::findOrFail($id);
-        $bkudt->update([
-            'status2' => 'Tolak',
-        ]);
-        
-        return response()->json(['success'=>'Data Berhasil Ditolak']);
-    }
-
-    public function terima(Request $request, $id)
-    {
-        // $where = array('id_pajakkpp' => $id);
-
-        $bkudt = bkuModel::findOrFail($id);
-        
-        $bkudt->update([
-            'status2' => 'Terima',
-        ]);
-
-        return response()->json(['success'=>'Data Berhasil Terima']);
+        return redirect('/tampilbku')->with('success', 'Data Berhasil di import');
     }
 
     public function destroy($id)
     {
-        $data = bkuModel::where('id',$id)->first(['bukti_pemby']);
+        $data = bkusModel::where('id',$id)->first(['bukti_pemby']);
         unlink("app/assets/images/bukti_pemby_pajak/".$data->bukti_pemby);
 
-        bkuModel::where('id', $id)->delete();
+        bkusModel::where('id', $id)->delete();
 
         return response()->json(['success'=>'Data Berhasil Dihapus']);
     }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BkuModel extends Model
+class bkusModel extends Model
 {
     use HasFactory;
     protected $table = "tb_transaksi";
@@ -19,7 +19,7 @@ class BkuModel extends Model
         'status1',
         'status2',
         'status3',
-        'no_bukti',
+        'no_buku',
         'tgl_transaksi',
         'nilai_transaksi',
         'created_at',

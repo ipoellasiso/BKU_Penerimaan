@@ -10,6 +10,31 @@
             <div class="card">
                 <div class="card-body">
 
+                    @if (session()->has('failures'))
+                        <table class="table table-warning">
+                            <tr>
+                                <th>Baris</th>
+                                <th>Nomor Buku Sudah Ada</th>
+                                <th>Error</th>
+                                <th>Value</th>
+                            </tr>
+                            @foreach (session()->get('failures') as $validasi)
+                                <tr>
+                                    <td>{{ $validasi->row() }}</td>
+                                    <td>{{ $validasi->attribute() }}</td>
+                                    <td>
+                                        <ul>
+                                            @foreach ($validasi->errors() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                    <td>{{ $validasi->values()[$validasi->attribute()] }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    @endif
+
                     <div class="row">
                         <div class="col-3 card">
                             <div class="card-body">
@@ -500,7 +525,7 @@
                         
                         
                             <button class="btn btn-secondary btn-tone m-r-5 btn-xs ml-auto">
-                                <a href="javascript:void(0)" id="uploadPajakls" data-toggle="tooltip" data-placement="top" title="Upload"> Upload </a>
+                                <a href="javascript:void(0)" id="createimportbku" data-toggle="tooltip" data-placement="top" title="Upload"> Upload </a>
                             </button>
                             {{-- <div class="dropdown-menu"> --}}
                                 {{-- <a class="dropdown-item" href="javascript:void(0)" id="createPajakls" data-toggle="tooltip" data-placement="top" title="klik"> Tambah </a> --}}
@@ -536,10 +561,11 @@
 {{-- </div> --}}
 
 
-@include('Penatausahaan.Bku.Modal.Tolak')
-@include('Penatausahaan.Bku.Modal.Terima')
+{{-- @include('Penatausahaan.Bku.Modal.Tolak') --}}
+{{-- @include('Penatausahaan.Bku.Modal.Terima') --}}
+@include('Penatausahaan.Bku.Modal.import')
 @include('Penatausahaan.Bku.Fungsi.Fungsi2')
-@include('Penatausahaan.Bku.Modal.Tambah')
+{{-- @include('Penatausahaan.Bku.Modal.Tambah') --}}
 @include('Penatausahaan.Bku.Fungsi.Fungsi')
 
 

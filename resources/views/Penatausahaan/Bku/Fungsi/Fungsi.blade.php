@@ -46,6 +46,15 @@
 
     });
 
+    $('#createimportbku').click(function (){
+        $('#saveBtn').val("create-import");
+        $('#id').val('');
+        $('#userForm1').trigger("reset");
+        $('#tambahimportbku').modal('show');
+        $('#modal-preview').attr('src', 'https://via/placeholder.com/150');
+
+    });
+
     // simpan data
     $('body').on('submit', '#userForm', function(e){
         e.preventDefault();

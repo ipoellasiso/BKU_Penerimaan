@@ -66,3 +66,4 @@ Route::delete('/bank/destroy/{id_bank}', [BankController::class, 'destroy'])->mi
 
 // ======= DATA BKU =======
 Route::get('/tampilbku', [BkuController::class, 'index'])->middleware('auth:web','checkRole:Admin');
+Route::post('bku', [BkuController::class, 'import'])->name('bku.import')->middleware('auth:web','checkRole:Admin');
