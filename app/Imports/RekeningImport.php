@@ -25,6 +25,10 @@ class RekeningImport implements ToModel, WithHeadingRow, WithValidation, SkipsOn
             'no_rekening' => $row['no_rekening'],
             'rekening' => $row['rekening'],
             'rekening2' => $row['rekening2'],
+            'ket1' => $row['ket1'],
+            'ket2' => $row['ket2'],
+            'ket3' => $row['ket3'],
+            'ket4' => $row['ket4'],
 
         ]);
     }

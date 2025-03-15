@@ -37,7 +37,7 @@ class RekeningController extends Controller
         if ($request->ajax()) {
 
             $datarek = DB::table('tb_rekening')
-                        ->select('tb_rekening.id_rekening', 'tb_rekening.no_rekening', 'tb_rekening.rekening', 'tb_rekening.rekening2')
+                        ->select('tb_rekening.id_rekening', 'tb_rekening.no_rekening', 'tb_rekening.rekening', 'tb_rekening.rekening2', 'tb_rekening.ket1', 'tb_rekening.ket2', 'tb_rekening.ket3', 'tb_rekening.ket4',)
                         // ->join('opd', 'users.id_opd', 'opd.id',)
                         ->get();
 

@@ -13,6 +13,10 @@ class RekeningModel extends Model
     protected $fillable = [
         'no_rekening',
         'rekening',
-        'rekening2'
+        'rekening2',
+        'ket1',
+        'ket2',
+        'ket3',
+        'ket4'
     ];
 }

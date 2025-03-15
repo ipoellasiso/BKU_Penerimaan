@@ -80,8 +80,8 @@
                             <li class="@if(isset($active_bku)){{ $active_bku }} @endif">
                                 <a href="/tampilbku">BKU</a>
                             </li>
-                            <li>
-                                <a href="app-e-commerce-order-list.html">REALISASI</a>
+                            <li class="@if(isset($active_realisasi)){{ $active_realisasi }} @endif">
+                                <a href="/tampilrealisasi">REALISASI</a>
                             </li>
                         </ul>
                     </li>

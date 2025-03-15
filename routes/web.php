@@ -9,6 +9,7 @@ use App\Http\Controllers\JenispajakController;
 use App\Http\Controllers\OpdController;
 use App\Http\Controllers\Pajakls1Controller;
 use App\Http\Controllers\PajaklsController;
+use App\Http\Controllers\RealisasiController;
 use App\Http\Controllers\RekeningController;
 use App\Http\Controllers\TarikpajakController;
 use App\Http\Controllers\UserController;
@@ -67,3 +68,6 @@ Route::delete('/bank/destroy/{id_bank}', [BankController::class, 'destroy'])->mi
 // ======= DATA BKU =======
 Route::get('/tampilbku', [BkuController::class, 'index'])->middleware('auth:web','checkRole:Admin');
 Route::post('bku', [BkuController::class, 'import'])->name('bku.import')->middleware('auth:web','checkRole:Admin');
+
+// ======= REALISASI =======
+Route::get('/tampilrealisasi', [RealisasiController::class, 'index'])->middleware('auth:web','checkRole:Admin');

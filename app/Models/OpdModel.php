@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class OpdModel extends Model
 {
     use HasFactory;
-    protected $table = "opd";
+    protected $table = "tb_opd";
     protected $primaryKey = "id";
     protected $fillable = [
         'nama_opd',
