@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AnggaranModel;
 use App\Models\bkusModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
@@ -30,6 +31,12 @@ class RealisasiController extends Controller
             'breadcumd2'           => 'Realisasi',
             'userx'                => UserModel::where('id',$userId)->first(['fullname','role','gambar',]),
 
+            // == ANGGARAN ==
+            // == PAD ==
+            // PAJAK
+            'tanggaran_pdhotel'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.no_rekening', '4.1.01.19.03.0001')->sum('nilai'),
+
+            // == REALISASI ==
             // == PAD ==
             // PAJAK
             'total_pendapatandaerah'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket4', '4')->sum('nilai_transaksi'),
@@ -63,6 +70,10 @@ class RealisasiController extends Controller
             // DAKFISIK
 
             // DAKNONFISIK
+
+            // == SISA ==
+            // == PAD ==
+            // PAJAK
 
 
         );

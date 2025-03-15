@@ -37,8 +37,11 @@
                             <li class="@if(isset($active_krek)){{ $active_krek }} @endif">
                                 <a href="/tampilrekening">Data Rekening</a>
                             </li>
-                            <li class="@if(isset($active_akunpajak)){{ $active_akunpajak }} @endif">
+                            <li class="@if(isset($active_bank)){{ $active_bank }} @endif">
                                 <a href="/tampilbank">Data Bank</a>
+                            </li>
+                            <li class="@if(isset($active_anggaran)){{ $active_anggaran }} @endif">
+                                <a href="/tampilanggaran">Anggaran</a>
                             </li>
                         </ul>
                     </li>

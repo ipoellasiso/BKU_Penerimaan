@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AkunpajakController;
+use App\Http\Controllers\AnggaranController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BerandaController;
@@ -71,3 +72,6 @@ Route::post('bku', [BkuController::class, 'import'])->name('bku.import')->middle
 
 // ======= REALISASI =======
 Route::get('/tampilrealisasi', [RealisasiController::class, 'index'])->middleware('auth:web','checkRole:Admin');
+
+// ======= ANGGARAN =======
+Route::get('/tampilanggaran', [AnggaranController::class, 'index'])->middleware('auth:web','checkRole:Admin');

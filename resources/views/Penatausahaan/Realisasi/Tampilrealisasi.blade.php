@@ -45,7 +45,7 @@
                                     <span> </span>
                                 </div>
                                 <div class="col-1 table-bordered" align="right">
-                                    <span>20 %</span>
+                                    <span> %</span>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                                             <span> </span>
                                         </div>
                                         <div class="col-1 table-bordered" align="right">
-                                            <span>20 %</span>
+                                            <span> %</span>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
                                                     <span> </span>
                                                 </div>
                                                 <div class="col-1 table-bordered" align="right">
-                                                    <span>20 %</span>
+                                                    <span> %</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,7 +108,7 @@
                                                             <span> </span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span>20 %</span>
+                                                            <span> %</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -118,16 +118,16 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PBJT-Hotel</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> </span>
+                                                            <span> {{ number_format($tanggaran_pdhotel, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
                                                             <span> {{ number_format($total_pdhotel, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> </span>
+                                                            <span>{{ number_format($tanggaran_pdhotel - $total_pdhotel, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span>20 %</span>
+                                                            <span>{{ number_format($total_pdhotel / $tanggaran_pdhotel * 100, 2) }} %</span>
                                                         </div>
                                                     </div>
                                                     <div class="row">
@@ -144,7 +144,7 @@
                                                             <span> </span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span>20 %</span>
+                                                            <span> %</span>
                                                         </div>
                                                     </div>
                                                 </div>
