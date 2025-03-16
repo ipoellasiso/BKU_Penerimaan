@@ -34,6 +34,10 @@ class RealisasiController extends Controller
             // == ANGGARAN ==
             // == PAD ==
             // PAJAK
+            'tanggaran_pendapatandaerah'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.ket4', '4')->sum('nilai'),
+            'tanggaran_pad'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.ket1', '4.1')->sum('nilai'),
+            'tanggaran_pd'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.ket2', '4.1.01')->sum('nilai'),
+            'tanggaran_pdbapenda'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->join('tb_opd', 'tb_opd.id', 'tb_anggaran.id_opd')->where('tb_opd.nama_opd', 'Badan Pendapatan Daerah')->sum('nilai'),
             'tanggaran_pdhotel'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.no_rekening', '4.1.01.19.03.0001')->sum('nilai'),
 
             // == REALISASI ==
@@ -71,10 +75,6 @@ class RealisasiController extends Controller
 
             // DAKNONFISIK
 
-            // == SISA ==
-            // == PAD ==
-            // PAJAK
-
 
         );
 
@@ -98,4 +98,5 @@ class RealisasiController extends Controller
 
         return view('Penatausahaan.Realisasi.Tampilrealisasi', $data);
     }
+    
 }

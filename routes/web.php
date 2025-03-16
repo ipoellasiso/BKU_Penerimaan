@@ -71,7 +71,8 @@ Route::get('/tampilbku', [BkuController::class, 'index'])->middleware('auth:web'
 Route::post('bku', [BkuController::class, 'import'])->name('bku.import')->middleware('auth:web','checkRole:Admin');
 
 // ======= REALISASI =======
-Route::get('/tampilrealisasi', [RealisasiController::class, 'index'])->middleware('auth:web','checkRole:Admin');
+Route::get('/tampilrealisasi', [RealisasiController::class, 'index'])->name('realisasi.index')->middleware('auth:web','checkRole:Admin');
+Route::get('/tampilrealisasi/{id}/tampilawal', [RealisasiController::class, 'tampilrealisasi'])->name('realisasi.tampil')->middleware('auth:web','checkRole:Admin');
 
 // ======= ANGGARAN =======
 Route::get('/tampilanggaran', [AnggaranController::class, 'index'])->middleware('auth:web','checkRole:Admin');

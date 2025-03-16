@@ -3,7 +3,6 @@
 
 
     <div class="card">
-        
         <div class="card-header">
             <h5 class="card-title">
                     <div class="row">
@@ -25,12 +24,12 @@
                     </div>
             </h5>
         </div>
-        
+
         <div class="" id="pad">
             <div class="card">
                 <div class="card-header">
                     <h5 class="card-title">
-        
+
                         <div class="collapsed" data-toggle="collapse" href="#collapsellpad">
                             <div class="row">
                                 <div class="col-5 table-bordered">
@@ -155,7 +154,7 @@
                                 </div>
                             </div>
                         </div>
-        
+
                     </h5>
                 </div>
             </div>
@@ -163,7 +162,6 @@
 
     </div>
 
-    @include('Penatausahaan.Realisasi.Fungsi.Fungsi')
 
 
 @endsection
