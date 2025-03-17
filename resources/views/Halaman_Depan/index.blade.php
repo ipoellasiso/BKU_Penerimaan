@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{-- <title>Sipetanda - {{ $title }}</title> --}}
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/app/assets/images/logo/favicon3.png">
+
+    <!-- page css -->
+    <link href="/app/assets/vendors/select2/select2.css" rel="stylesheet">
+    <link href="/app/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="/app/assets/vendors/datatables/dataTables.bootstrap.min.css" rel="stylesheet">
+
+    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css " rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Core css -->
+    <link href="/app/assets/css/app.min.css" rel="stylesheet">
+    <script src="/app/assets/js/vendors.min.js"></script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>SIMELAJANG</title>
+        <title>SIPETANDA</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('halaman_depan/assets/favicon.ico') }}" />
         <!-- Font Awesome icons (free version)-->
@@ -20,7 +39,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">Welcome SIMELAJANG</a>
+                <a class="navbar-brand" href="#page-top">Welcome SIPETANDA</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -28,16 +47,2834 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/login">Login</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Galeri</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                        {{-- <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li> --}}
                         
                     </ul>
                 </div>
             </div>
         </nav>
+
+        <br><br><br><br><br><br>
+        <div class="row">
+            <div class="col-4">
+                <div class="avatar-image  m-h-10 m-r-29">
+                    <img src="/app/assets/images/logo/13.png"  width="15%">
+                </div>
+            </div>
+            <div class="col-4 text-center">
+                <b><h5>PEMERINTAHAN KOTA PALU</b><br>
+                <b><h5>LAPORAN TARGET DAN REALISASI PENDAPATAN DAERAH KOTA PALU</b>
+                <b><h5>TAHUN ANGGARAN 2025</h4></b>
+                <b><h5>PERIODE</h6></b>
+            </div>
+            <div class="col-4">
+            </div>
+        </div>
+        <br><br>
+    {{-- <header class="masthead bg-primary text-white text-center"> --}}
+    {{-- <div class="container d-flex align-items-center flex-column"> --}}
+        <div class="card">
+        
+            <div class="card-header">
+                <h5 class="card-title">
+                        <div class="row">
+                            <div class="col-5" align="center">
+                                <b>Uraian</b>
+                            </div>
+                            <div class="col-2" align="center">
+                                <b>Anggaran</b>
+                            </div>
+                            <div class="col-2" align="center">
+                                <b>Realisasi</b>
+                            </div>
+                            <div class="col-2" align="center">
+                                <b>Sisa</b>
+                            </div>
+                            <div class="col-1" align="center">
+                                <b>%</b>
+                            </div>
+                        </div>
+                </h5>
+            </div>
+            
+            <div class="" id="pad">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">
+    
+                            {{-- PENDAPATAN DAERAH --}}
+                            <div class="collapsed" data-toggle="collapse" href="#collapsellpd">
+                                <div class="row">
+                                    <div class="col-5 table-bordered">
+                                        <b>Pendapatan Daerah</b>
+                                    </div>
+                                    <div class="col-2 table-bordered" align="right">
+                                        <span> {{ number_format($tanggaran_pendapatandaerah, 2) }}</span>
+                                    </div>
+                                    <div class="col-2 table-bordered" align="right">
+                                        <span> {{ number_format($total_pendapatandaerah, 2) }}</span>
+                                    </div>
+                                    <div class="col-2 table-bordered" align="right">
+                                        <span> {{ number_format($tanggaran_pendapatandaerah - $total_pendapatandaerah, 2) }}</span>
+                                    </div>
+                                    <div class="col-1 table-bordered" align="right">
+                                        <span> {{ number_format($total_pendapatandaerah / $tanggaran_pendapatandaerah * 100, 2) }} %</span>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            {{-- PAD --}}
+                            <div id="collapsellpd" class="collapse" data-parent="#pad">
+                                <div class="" id="pad1">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapsellpad1">
+                                        <div class="row">
+                                            <div class="col-5 table-bordered">
+                                                <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Asli Daerah (PAD)</b>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($tanggaran_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($total_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($tanggaran_pad - $total_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-1 table-bordered" align="right">
+                                                <span> {{ number_format($total_pad / $tanggaran_pad * 100, 2) }} %</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Pajak Daerah --}}
+                                <div id="collapsellpad1" class="collapse" data-parent="#pad1">
+                                    <div class="" id="pad11">
+                                        <div class="collapsed" data-toggle="collapse" href="#collapsellpad11">
+                                            <div class="row">
+                                                <div class="col-5 table-bordered">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pajak Daerah</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-1 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapsellpad11" class="collapse" data-parent="#pad11">
+                                            <div class="" id="pad111">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad111">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Badan Pendapatan Daerah</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad111" class="collapse" data-parent="#pad111">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Pajak Kendaraan Bermotor (PKB)</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Bea Balik Nama Kendaraan Bermotor (BBNKB)</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
+                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Pajak Reklame</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
+                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Pajak Penerangan Jalan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
+                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Pajak Air Tanah</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
+                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Pajak Sarang Burung Walet</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Pajak Mineral Bukan Logam dan Batuan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdlogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdlogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdlogam - $total_pdlogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdlogam > 0 && $tanggaran_pdlogam > 0)
+                                                                <span>{{ number_format($total_pdlogam / $tanggaran_pdlogam * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Pajak Bumi dan Bangunan Perdesaan dan Perkotaan (PBBP2)</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpbb - $total_pdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpbb > 0 && $tanggaran_pdpbb > 0)
+                                                                <span>{{ number_format($total_pdpbb / $tanggaran_pdpbb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; Bea Perolehan Hak Atas Tanah dan Bangunan (BPHTB)</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdbphtb - $total_pdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdbphtb > 0 && $tanggaran_pdbphtb > 0)
+                                                                <span>{{ number_format($total_pdbphtb / $tanggaran_pdbphtb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; PBJT-Restoran</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdrestoran, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdrestoran, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdrestoran - $total_pdrestoran, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdrestoran > 0 && $tanggaran_pdrestoran > 0)
+                                                                <span>{{ number_format($total_pdrestoran / $tanggaran_pdrestoran * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; PBJT-Hotel</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdhotel, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdhotel, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdhotel - $total_pdhotel, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdhotel > 0 && $tanggaran_pdhotel > 0)
+                                                                <span>{{ number_format($total_pdhotel / $tanggaran_pdhotel * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; PBJT-Penyediaan atau Penyelenggaraan Tempat Parkir</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdparkir - $total_pdparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdparkir > 0 && $tanggaran_pdparkir > 0)
+                                                                <span>{{ number_format($total_pdparkir / $tanggaran_pdparkir * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp; PBJT-Distkotek, Karaoke, Kelab Malam, Bar, dan Mandi Uap/Spa</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdkaraoke, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdkaraoke, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdkaraoke - $total_pdkaraoke, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdkaraoke > 0 && $tanggaran_pdkaraoke > 0)
+                                                                <span>{{ number_format($total_pdkaraoke / $tanggaran_pdkaraoke * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Retribusi Daerah --}}
+                                <div id="collapsellpad1" class="collapse" data-parent="#pad1">
+                                    <div class="" id="pad21">
+                                        <div class="collapsed" data-toggle="collapse" href="#collapsellpad21">
+                                            <div class="row">
+                                                <div class="col-5 table-bordered">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Daerah</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_rd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($total_rd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_rd - $total_rd, 2) }}</span>
+                                                </div>
+                                                <div class="col-1 table-bordered" align="right">
+                                                    @if ($total_rd > 0 && $tanggaran_rd > 0)
+                                                        <span> {{ number_format($total_rd / $tanggaran_rd * 100, 2) }} %</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapsellpad21" class="collapse" data-parent="#pad21">
+                                            <div class="" id="pad121">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad121">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Kesehatan</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddinkes, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddinkes, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddinkes - $total_rddinkes, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddinkes > 0 && $tanggaran_rddinkes > 0)
+                                                                <span> {{ number_format($total_rddinkes / $tanggaran_rddinkes * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad121" class="collapse" data-parent="#pad121">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pelayanan Kesehatan di Puskesmas</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddinkespkm, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddinkespkm, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rddinkespkm - $total_rddinkespkm, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddinkespkm > 0 && $tanggaran_rddinkespkm > 0)
+                                                                <span>{{ number_format($total_rddinkespkm / $tanggaran_rddinkespkm * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pad122">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad122">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Lingkungan Hidup</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddlh, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddlh, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddlh - $total_rddlh, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddlh > 0 && $tanggaran_rddlh > 0)
+                                                                <span> {{ number_format($total_rddlh / $tanggaran_rddlh * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad122" class="collapse" data-parent="#pad122">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pelayanan Persampahan/ Kebersihan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddlhsampah, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddlhsampah, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rddlhsampah - $total_rddlhsampah, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddlhsampah > 0 && $tanggaran_rddlhsampah > 0)
+                                                                <span>{{ number_format($total_rddlhsampah / $tanggaran_rddlhsampah * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pelayanan Tempat Rekreasi dan Olahraga</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddlholahraga, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddlholahraga, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rddlholahraga - $total_rddlholahraga, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddlholahraga > 0 && $tanggaran_rddlholahraga > 0)
+                                                                <span>{{ number_format($total_rddlholahraga / $tanggaran_rddlholahraga * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pad123">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad123">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Penataan Ruang dan Pertanahan</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdtr, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdtr, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdtr - $total_rdtr, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdtr > 0 && $tanggaran_rdtr > 0)
+                                                                <span> {{ number_format($total_rdtr / $tanggaran_rdtr * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad123" class="collapse" data-parent="#pad123">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Persetujuan Bangunan Gedung</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdtrimb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdtrimb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdtrimb - $total_rdtrimb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdtrimb > 0 && $tanggaran_rdtrimb > 0)
+                                                                <span>{{ number_format($total_rdtrimb / $tanggaran_rdtrimb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pad124">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad124">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Pemuda dan Olahraga</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddispora, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddispora, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddispora - $total_rddispora, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddispora > 0 && $tanggaran_rddispora > 0)
+                                                                <span> {{ number_format($total_rddispora / $tanggaran_rddispora * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad124" class="collapse" data-parent="#pad124">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pelayanan Tempat Rekreasi dan Olahraga</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddisporaolahraga, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddisporaolahraga, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rddisporaolahraga - $total_rddisporaolahraga, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddisporaolahraga > 0 && $tanggaran_rddisporaolahraga > 0)
+                                                                <span>{{ number_format($total_rddisporaolahraga / $tanggaran_rddisporaolahraga * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pad125">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad125">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Perhubungan</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddishub, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddishub, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddishub - $total_rddishub, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddishub > 0 && $tanggaran_rddishub > 0)
+                                                                <span> {{ number_format($total_rddishub / $tanggaran_rddishub * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad125" class="collapse" data-parent="#pad125">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Penyediaan Pelayanan Parkir di Tepi Jalan Umum</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddishubparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddishubparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rddishubparkir - $total_rddishubparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddishubparkir > 0 && $tanggaran_rddishubparkir > 0)
+                                                                <span>{{ number_format($total_rddishubparkir / $tanggaran_rddishubparkir * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pemakaian Kendaraan Bermotor</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddishubpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddishubpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rddishubpkb - $total_rddishubpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddishubpkb > 0 && $tanggaran_rddishubpkb > 0)
+                                                                <span>{{ number_format($total_rddishubpkb / $tanggaran_rddishubpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pelayanan Penyediaan Fasilitas Lainnya di Lingkungan Terminal</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rddishubterminal, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rddishubterminal, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rddishubterminal - $total_rddishubterminal, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rddishubterminal > 0 && $tanggaran_rddishubterminal > 0)
+                                                                <span>{{ number_format($total_rddishubterminal / $tanggaran_rddishubterminal * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pad126">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad126">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Pertanian dan Ketahanan Pangan</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpertanian, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpertanian, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpertanian - $total_rdpertanian, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpertanian > 0 && $tanggaran_rdpertanian > 0)
+                                                                <span> {{ number_format($total_rdpertanian / $tanggaran_rdpertanian * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad126" class="collapse" data-parent="#pad126">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Penyediaan Tempat Pelelangan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpertanianpelelangan, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpertanianpelelangan, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdpertanianpelelangan - $total_rdpertanianpelelangan, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpertanianpelelangan > 0 && $tanggaran_rdpertanianpelelangan > 0)
+                                                                <span>{{ number_format($total_rdpertanianpelelangan / $tanggaran_rdpertanianpelelangan * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pelayanan Rumah Potong Hewan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpertanianrph, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpertanianrph, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdpertanianrph - $total_rdpertanianrph, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpertanianrph > 0 && $tanggaran_rdpertanianrph > 0)
+                                                                <span>{{ number_format($total_rdpertanianrph / $tanggaran_rdpertanianrph * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Penjualan Produksi Hasil Usaha Daerah berupa Bibit atau Benih Tanaman</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpertanianbt, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpertanianbt, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdpertanianbt - $total_rdpertanianbt, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpertanianbt > 0 && $tanggaran_rdpertanianbt > 0)
+                                                                <span>{{ number_format($total_rdpertanianbt / $tanggaran_rdpertanianbt * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Penjualan Produksi hasil Usaha Daerah berupa Bibit atau Benih Ikan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpertanianbi, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpertanianbi, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdpertanianbi - $total_rdpertanianbi, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpertanianbi > 0 && $tanggaran_rdpertanianbi > 0)
+                                                                <span>{{ number_format($total_rdpertanianbi / $tanggaran_rdpertanianbi * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pad127">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad127">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Koperasi, UMKM dan Tenaga Kerja</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdkoperasi, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdkoperasi, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdkoperasi - $total_rdkoperasi, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdkoperasi > 0 && $tanggaran_rdkoperasi > 0)
+                                                                <span> {{ number_format($total_rdkoperasi / $tanggaran_rdkoperasi * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad127" class="collapse" data-parent="#pad127">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pemakaian Alat</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdkoperasialat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdkoperasialat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdkoperasialat - $total_rdkoperasialat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdkoperasialat > 0 && $tanggaran_rdkoperasialat > 0)
+                                                                <span>{{ number_format($total_rdkoperasialat / $tanggaran_rdkoperasialat * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Penyediaan Tempat Kegiatan Usaha berupa Pasar, Grosir,</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pertokoan, dan Tempat Kegiatan Usaha Lainnya</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdkoperasipasar, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdkoperasipasar, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdkoperasipasar - $total_rdkoperasipasar, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdkoperasipasar > 0 && $tanggaran_rdkoperasipasar > 0)
+                                                                <span>{{ number_format($total_rdkoperasipasar / $tanggaran_rdkoperasipasar * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Penggunaan Tenaga Kerja Asing (TKA)</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdkoperasiimta, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdkoperasiimta, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdkoperasiimta - $total_rdkoperasiimta, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdkoperasiimta > 0 && $tanggaran_rdkoperasiimta > 0)
+                                                                <span>{{ number_format($total_rdkoperasiimta / $tanggaran_rdkoperasiimta * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pad128">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad128">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Perdagangan dan Perindustrian</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdperindag, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdperindag, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdperindag - $total_rdperindag, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdperindag > 0 && $tanggaran_rdperindag > 0)
+                                                                <span> {{ number_format($total_rdperindag / $tanggaran_rdperindag * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad128" class="collapse" data-parent="#pad128">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Penyediaan Fasilitas Pasar Grosir</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Berbagai Jenis Barang yang Dikontrakkan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdperindagpasar, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdperindagpasar, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdperindagpasar - $total_rdperindagpasar, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdperindagpasar > 0 && $tanggaran_rdperindagpasar > 0)
+                                                                <span>{{ number_format($total_rdperindagpasar / $tanggaran_rdperindagpasar * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pad129">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad129">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dinas Pekerjaan Umum</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpu, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpu, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpu - $total_rdpu, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpu > 0 && $tanggaran_rdpu > 0)
+                                                                <span> {{ number_format($total_rdpu / $tanggaran_rdpu * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad129" class="collapse" data-parent="#pad129">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Penyediaan dan/atau Penyedotan Kakus</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpukakus, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpukakus, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdpukakus - $total_rdpukakus, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpukakus > 0 && $tanggaran_rdpukakus > 0)
+                                                                <span>{{ number_format($total_rdpukakus / $tanggaran_rdpukakus * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pemakaian Laboratorium</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpulab, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpulab, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdpulab - $total_rdpulab, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpulab > 0 && $tanggaran_rdpulab > 0)
+                                                                <span>{{ number_format($total_rdpulab / $tanggaran_rdpulab * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Retribusi Pemakaian Alat</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_rdpualat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_rdpualat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_rdpualat - $total_rdpualat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_rdpualat > 0 && $tanggaran_rdpualat > 0)
+                                                                <span>{{ number_format($total_rdpualat / $tanggaran_rdpualat * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Hasil Pengelolaan Kekayaan Daerah  --}}
+                                <div id="collapsellpad1" class="collapse" data-parent="#pad1">
+                                    <div class="" id="pad31">
+                                        <div class="collapsed" data-toggle="collapse" href="#collapsellpad31">
+                                            <div class="row">
+                                                <div class="col-5 table-bordered">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hasil Pengelolaan Kekayaan Daerah yang Dipisahkan</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_hpkddividen, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($total_hpkddividen, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_hpkddividen - $total_hpkddividen, 2) }}</span>
+                                                </div>
+                                                <div class="col-1 table-bordered" align="right">
+                                                    @if ($total_hpkddividen > 0 && $tanggaran_hpkddividen > 0)
+                                                        <span> {{ number_format($total_hpkddividen / $tanggaran_hpkddividen * 100, 2) }} %</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapsellpad31" class="collapse" data-parent="#pad31">
+                                            <div class="" id="pad131">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad131">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Badan Pengelolaan Keuangan dan Aset Daerah</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            {{-- <span> {{ number_format($tanggaran_allbpka, 2) }}</span> --}}
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            {{-- <span> {{ number_format($total_allbpka, 2) }}</span> --}}
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            {{-- <span> {{ number_format($tanggaran_allbpka - $total_allbpka, 2) }}</span> --}}
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            {{-- <span> {{ number_format($total_allbpka / $tanggaran_allbpka * 100, 2) }} %</span> --}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad131" class="collapse" data-parent="#pad131">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bagian Laba yang Dibagikan kepada Pemerintah Daerah</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Dividen) atas Penyertaan Modal pada BUMN</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_hpkddividenbumn, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_hpkddividenbumn, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_hpkddividenbumn - $total_hpkddividenbumn, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_hpkddividenbumn > 0 && $tanggaran_hpkddividenbumn > 0)
+                                                                <span>{{ number_format($total_hpkddividenbumn / $tanggaran_hpkddividenbumn * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                 {{-- LLP  --}}
+                                 <div id="collapsellpad1" class="collapse" data-parent="#pad1">
+                                    <div class="" id="pad41">
+                                        <div class="collapsed" data-toggle="collapse" href="#collapsellpad41">
+                                            <div class="row">
+                                                <div class="col-5 table-bordered">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lain-lain PAD yang Sah </span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_llp, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($total_llp, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_llp - $total_llp, 2) }}</span>
+                                                </div>
+                                                <div class="col-1 table-bordered" align="right">
+                                                    @if ($total_llp > 0 && $tanggaran_llp > 0)
+                                                        <span> {{ number_format($total_llp / $tanggaran_llp * 100, 2) }} %</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapsellpad41" class="collapse" data-parent="#pad41">
+                                            <div class="" id="pad141">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellpad141">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Badan Pengelolaan Keuangan dan Aset Daerah</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            {{-- <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span> --}}
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            {{-- <span> {{ number_format($total_pdbapenda, 2) }}</span> --}}
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            {{-- <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span> --}}
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            {{-- <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span> --}}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellpad141" class="collapse" data-parent="#pad141">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hasil Penjualan Bangunan Gedung-Bangunan Gedung</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tempat Kerja-Bangunan Gedung Kantor</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpgk, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpgk, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpgk - $total_llpgk, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpgk > 0 && $tanggaran_llpgk > 0)
+                                                                <span>{{ number_format($total_llpgk / $tanggaran_llpgk * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hasil Penjualan Konstruksi Dalam Pengerjaan Peralatan dan</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mesin-Alat Besar-Alat Besar Darat-Alat Besar Darat Lainnya</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpabd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpabd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpabd - $total_llpabd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpabd > 0 && $tanggaran_llpabd > 0)
+                                                                <span>{{ number_format($total_llpabd / $tanggaran_llpabd * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hasil Sewa BMD</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpbmd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpbmd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpbmd - $total_llpbmd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpbmd > 0 && $tanggaran_llpbmd > 0)
+                                                                <span>{{ number_format($total_llpbmd / $tanggaran_llpbmd * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jasa Giro pada Kas Daerah</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpjskd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpjskd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpjskd - $total_llpjskd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpjskd > 0 && $tanggaran_llpjskd > 0)
+                                                                <span>{{ number_format($total_llpjskd / $tanggaran_llpjskd * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jasa Giro pada Kas di Bendahara</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpjgkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpjgkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpjgkb - $total_llpjgkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpjgkb > 0 && $tanggaran_llpjgkb > 0)
+                                                                <span>{{ number_format($total_llpjgkb / $tanggaran_llpjgkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bunga atas Penempatan Uang Pemerintah Daerah</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llppbpd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llppbpd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llppbpd - $total_llppbpd, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llppbpd > 0 && $tanggaran_llppbpd > 0)
+                                                                <span>{{ number_format($total_llppbpd / $tanggaran_llppbpd * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda atas Keterlambatan Pelaksanaan Pekerjaan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdendaket, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdendaket, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdendaket - $total_llpdendaket, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdendaket > 0 && $tanggaran_llpdendaket > 0)
+                                                                <span>{{ number_format($total_llpdendaket / $tanggaran_llpdendaket * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda Pajak Hotel</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdphotel, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdphotel, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdphotel - $total_llpdphotel, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdphotel > 0 && $tanggaran_llpdphotel > 0)
+                                                                <span>{{ number_format($total_llpdphotel / $tanggaran_llpdphotel * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda Pajak Restoran dan Sejenisnya</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdpres, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdpres, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdpres - $total_llpdpres, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdpres > 0 && $tanggaran_llpdpres > 0)
+                                                                <span>{{ number_format($total_llpdpres / $tanggaran_llpdpres * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda Pajak Diskotik, Karaoke, Klub Malam, dan Sejenisnya</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdpkaraoke, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdpkaraoke, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdpkaraoke - $total_llpdpkaraoke, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdpkaraoke > 0 && $tanggaran_llpdpkaraoke > 0)
+                                                                <span>{{ number_format($total_llpdpkaraoke / $tanggaran_llpdpkaraoke * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda Pajak Reklame Papan/ Billboard/Videotron/Megatron</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdprek, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdprek, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdprek - $total_llpdprek, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdprek > 0 && $tanggaran_llpdprek > 0)
+                                                                <span>{{ number_format($total_llpdprek / $tanggaran_llpdprek * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda Pajak Parkir</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdpparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdpparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdpparkir - $total_llpdpparkir, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdpparkir > 0 && $tanggaran_llpdpparkir > 0)
+                                                                <span>{{ number_format($total_llpdpparkir / $tanggaran_llpdpparkir * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda Pajak Air Tanah</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdpabt, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdpabt, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdpabt - $total_llpdpabt, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdpabt > 0 && $tanggaran_llpdpabt > 0)
+                                                                <span>{{ number_format($total_llpdpabt / $tanggaran_llpdpabt * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda Pajak Mineral Bukan Logam dan Batuan Lainnya</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdplogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdplogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdplogam - $total_llpdplogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdplogam > 0 && $tanggaran_llpdplogam > 0)
+                                                                <span>{{ number_format($total_llpdplogam / $tanggaran_llpdplogam * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda PBBP2</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdpbb - $total_llpdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdpbb > 0 && $tanggaran_llpdpbb > 0)
+                                                                <span>{{ number_format($total_llpdpbb / $tanggaran_llpdpbb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda BPHTB</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdbphtb - $total_llpdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdbphtb > 0 && $tanggaran_llpdbphtb > 0)
+                                                                <span>{{ number_format($total_llpdbphtb / $tanggaran_llpdbphtb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan dari Pengembalian Kelebihan Pembayaran </i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perjalanan Dinas Dalam Negeri- Perjalanan Dinas Biasa</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpperjadin, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpperjadin, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpperjadin - $total_llpperjadin, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpperjadin > 0 && $tanggaran_llpperjadin > 0)
+                                                                <span>{{ number_format($total_llpperjadin / $tanggaran_llpperjadin * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan dari Pengembalian Kelebihan Pembayaran </i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belanja Tunjangan PPh/Tunjangan Khusus ASN-Tunjangan</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PPh/Tunjangan Khusus PNS</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpgaji, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpgaji, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpgaji - $total_llpgaji, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpgaji > 0 && $tanggaran_llpgaji > 0)
+                                                                <span>{{ number_format($total_llpgaji / $tanggaran_llpgaji * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan dari Pengembalian Kelebihan Pembayaran</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pembayaran Belanja Barang Pakai Habis-Bahan-Bahan Lainnya</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpbph, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpbph, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpbph - $total_llpbph, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpbph > 0 && $tanggaran_llpbph > 0)
+                                                                <span>{{ number_format($total_llpbph / $tanggaran_llpbph * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan dari Pengembalian Kelebihan Pembayaran </i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Belanja Barang Pakai Habis-Barang untuk Dijual/Diserahkan </i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kepada Pihak Ketiga/Pihak Lain</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llppihakke3, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llppihakke3, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llppihakke3 - $total_llppihakke3, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llppihakke3 > 0 && $tanggaran_llppihakke3 > 0)
+                                                                <span>{{ number_format($total_llppihakke3 / $tanggaran_llppihakke3 * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan BLUD dari Jasa Layanan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpblud, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpblud, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpblud - $total_llpblud, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpblud > 0 && $tanggaran_llpblud > 0)
+                                                                <span>{{ number_format($total_llpblud / $tanggaran_llpblud * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan BLUD dari Hasil Kerja Sama dengan Pihak Lain</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpbludhks, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpbludhks, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpbludhks - $total_llpbludhks, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpbludhks > 0 && $tanggaran_llpbludhks > 0)
+                                                                <span>{{ number_format($total_llpbludhks / $tanggaran_llpbludhks * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan BLUD dari Jasa Giro</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpbludjg, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpbludjg, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpbludjg - $total_llpbludjg, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpbludjg > 0 && $tanggaran_llpbludjg > 0)
+                                                                <span>{{ number_format($total_llpbludjg / $tanggaran_llpbludjg * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Denda atas Pelanggaran Peraturan Daerah</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpdperwali, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpdperwali, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpdperwali - $total_llpdperwali, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpdperwali > 0 && $tanggaran_llpdperwali > 0)
+                                                                <span>{{ number_format($total_llpdperwali / $tanggaran_llpdperwali * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lain - Lain Pendapatan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llpllp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llpllp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llpllp - $total_llpllp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llpllp > 0 && $tanggaran_llpllp > 0)
+                                                                <span>{{ number_format($total_llpllp / $tanggaran_llpllp * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan dari Pengembalian dari uang muka (Pihak ke3)</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llppengembalianp3, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llppengembalianp3, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llppengembalianp3 - $total_llppengembalianp3, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llppengembalianp3 > 0 && $tanggaran_llppengembalianp3 > 0)
+                                                                <span>{{ number_format($total_llppengembalianp3 / $tanggaran_llppengembalianp3 * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan dari Pengembalian Temuan hasil Pemerikasaan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_llppengembalianhtp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_llppengembalianhtp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_llppengembalianhtp - $total_llppengembalianhtp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_llppengembalianhtp > 0 && $tanggaran_llppengembalianhtp > 0)
+                                                                <span>{{ number_format($total_llppengembalianhtp / $tanggaran_llppengembalianhtp * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            {{-- TRANSFER --}}
+                            <div id="collapsellpd" class="collapse" data-parent="#pad">
+                                <div class="" id="pt1">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapsept1">
+                                        <div class="row">
+                                            <div class="col-5 table-bordered">
+                                                <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Transfer</b>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($tanggaran_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($total_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($tanggaran_pad - $total_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-1 table-bordered" align="right">
+                                                <span> {{ number_format($total_pad / $tanggaran_pad * 100, 2) }} %</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Pendapatan Transfer Pemerintah Pusat --}}
+                                <div id="collapsept1" class="collapse" data-parent="#pt1">
+                                    <div class="" id="pt11">
+                                        <div class="collapsed" data-toggle="collapse" href="#collapsept11">
+                                            <div class="row">
+                                                <div class="col-5 table-bordered">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Transfer Pemerintah Pusat</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-1 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapsept11" class="collapse" data-parent="#pt11">
+                                            <div class="" id="pt111">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsept111">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dana Transfer Umum-Dana Bagi Hasil (DBH)</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsept111" class="collapse" data-parent="#pt111">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH PBB</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH PPh Pasal 21</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
+                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH PPh Pasal 25 dan Pasal 29/WPOPDN</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
+                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH Cukai Hasil Tembakau (CHT)</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
+                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Minyak Bumi</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
+                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Gas Bumi</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Mineral dan Batubara- Royalty</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdlogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdlogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdlogam - $total_pdlogam, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdlogam > 0 && $tanggaran_pdlogam > 0)
+                                                                <span>{{ number_format($total_pdlogam / $tanggaran_pdlogam * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Kehutanan-Provisi Sumber Daya Hutan (PSDH)</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpbb - $total_pdpbb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpbb > 0 && $tanggaran_pdpbb > 0)
+                                                                <span>{{ number_format($total_pdpbb / $tanggaran_pdpbb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Perikanan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdbphtb - $total_pdbphtb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdbphtb > 0 && $tanggaran_pdbphtb > 0)
+                                                                <span>{{ number_format($total_pdbphtb / $tanggaran_pdbphtb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH Sawit</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdrestoran, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdrestoran, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdrestoran - $total_pdrestoran, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdrestoran > 0 && $tanggaran_pdrestoran > 0)
+                                                                <span>{{ number_format($total_pdrestoran / $tanggaran_pdrestoran * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pt121">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsept121">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dana Transfer Umum-Dana Alokasi Umum (DAU)</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsept121" class="collapse" data-parent="#pt121">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU Tambahan Dukungan Pendanaan Kelurahan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
+                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU Tambahan Dukungan Pendanaan atas Kebijakan</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Penggajian Pegawai Pemerintah dengan Perjanjian Kerja</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
+                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU yang Ditentukan Penggunaannya Bidang Pendidikan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
+                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU yang Ditentukan Penggunaannya Bidang Kesehatan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
+                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU yang Ditentukan Penggunaannya Bidang Pekerjaan Umum</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pt131">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsept131">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dana Transfer Khusus-Dana Alokasi Khusus (DAK) Fisik</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsept131" class="collapse" data-parent="#pt131">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Pendidikan-Reguler-PAUD</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Pendidikan-Reguler-SD</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
+                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Pendidikan-Reguler-SMP</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
+                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Kesehatan dan KB-Penugasan-Peningkatan</i><br>
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pencegahan dan Pengendalian Penyakit dan Sanitasi Total Berbasis Masyarakat</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
+                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Jalan-Reguler-Jalan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
+                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Kesehatan dan KB-Penugasan-Keluarga Berencana</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Kesehatan dan KB-Reguler-Penguatan Sistem Kesehatan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pt141">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsept141">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dana Transfer Khusus-Dana Alokasi Khusus (DAK) Non Fisik</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsept141" class="collapse" data-parent="#pt141">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOS Reguler</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-TPG PNSD</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
+                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Tamsil Guru PNSD</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
+                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOP PAUD</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
+                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOP Pendidikan Kesetaraan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
+                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOKKB-Pengawasan Obat dan Makanan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOKKB-Akreditasi Puskesmas</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOKB-KB</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Dana Pelayanan Perlindungan Perempuan dan Anak</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Dana BOSP-BOS Kinerja</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Dana BOSP-BOP PAUD Reguler</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Dana BOK-BOK Dinas-BOK Kabupaten/Kota</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
+                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pt151">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsept151">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Insentif Fiskal</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsept151" class="collapse" data-parent="#pt151">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Insentif Fiskal Untuk Penghargaan Kinerja Tahun Berjalan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Pendapatan Transfer Antar Daerah --}}
+                                <div id="collapsept1" class="collapse" data-parent="#pt1">
+                                    <div class="" id="pt21">
+                                        <div class="collapsed" data-toggle="collapse" href="#collapsept21">
+                                            <div class="row">
+                                                <div class="col-5 table-bordered">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Transfer Antar Daerah</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-1 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapsept21" class="collapse" data-parent="#pt21">
+                                            <div class="" id="pt211">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsept211">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsept211" class="collapse" data-parent="#pt211">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak Bahan Bakar Kendaraan Bermotor</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak Air Permukaan</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
+                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak Rokok</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
+                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="" id="pt221">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsept221">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bantuan Keuangan Khusus dari Pemerintah Provinsi</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsept221" class="collapse" data-parent="#pt221">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bantuan Keuangan Khusus dari Pemerintah Daerah Provinsi</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            {{-- LAIN-LAIN PENDAPATAN DAERAH YANG SAH --}}
+                            <div id="collapsellpd" class="collapse" data-parent="#pad">
+                                <div class="" id="llp1">
+                                    <div class="collapsed" data-toggle="collapse" href="#collapsellp1">
+                                        <div class="row">
+                                            <div class="col-5 table-bordered">
+                                                <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lain-Lain Pendapatan Daerah Yang Sah</b>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($tanggaran_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($total_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-2 table-bordered" align="right">
+                                                <span> {{ number_format($tanggaran_pad - $total_pad, 2) }}</span>
+                                            </div>
+                                            <div class="col-1 table-bordered" align="right">
+                                                <span> {{ number_format($total_pad / $tanggaran_pad * 100, 2) }} %</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Pendapatan Hibah --}}
+                                <div id="collapsellp1" class="collapse" data-parent="#llp1">
+                                    <div class="" id="llp11">
+                                        <div class="collapsed" data-toggle="collapse" href="#collapsellp11">
+                                            <div class="row">
+                                                <div class="col-5 table-bordered">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Hibah</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-1 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapsellp11" class="collapse" data-parent="#llp11">
+                                            <div class="" id="llp111">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsellp111">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Hibah dari Pemerintah Daerah Lainnya</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsellp111" class="collapse" data-parent="#llp111">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Hibah dari Pemerintah Daerah</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- Lain-lain Pendapatan Sesuai dengan Ketentuan Peraturan Perundang-Undangan --}}
+                                <div id="collapsellp1" class="collapse" data-parent="#llp1">
+                                    <div class="" id="llp21">
+                                        <div class="collapsed" data-toggle="collapse" href="#collapsellp21">
+                                            <div class="row">
+                                                <div class="col-5 table-bordered">
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lain-lain Pendapatan Sesuai dengan</span><br>
+                                                    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ketentuan Peraturan Perundang-Undangan</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-2 table-bordered" align="right">
+                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                </div>
+                                                <div class="col-1 table-bordered" align="right">
+                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="collapsellp21" class="collapse" data-parent="#llp21">
+                                            <div class="" id="pt321">
+                                                <div class="collapsed" data-toggle="collapse" href="#collapsept321">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="collapsept321" class="collapse" data-parent="#pt321">
+                                                    <div class="row">
+                                                        <div class="col-5 table-bordered">
+                                                            <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kontribusi dari Sumber Lain yang Sah dan Tidak Mengikat</i>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-2 table-bordered" align="right">
+                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                        </div>
+                                                        <div class="col-1 table-bordered" align="right">
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @endif
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </h5>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+
         <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center">
+        {{-- <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
                 <img class="masthead-avatar mb-5" src="{{ asset('halaman_depan/assets/img/avataaars.svg') }}" alt="..." />
@@ -52,403 +2889,23 @@
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
             </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center">
-                    <!-- Portfolio Item 1-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset('halaman_depan/assets/img/portfolio/cabin.png') }}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset('halaman_depan/assets/img/portfolio/cake.png') }}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset('halaman_depan/assets/img/portfolio/circus.png') }}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset('halaman_depan/assets/img/portfolio/game.png') }}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset('halaman_depan/assets/img/portfolio/safe.png') }}" alt="..." />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{{ asset('halaman_depan/assets/img/portfolio/submarine.png') }}" alt="..." />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            2215 John Daniel Drive
-                            <br />
-                            Clark, MO 65243
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
-        </div>
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ asset('halaman_depan/assets/img/portfolio/cabin.png') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ asset('halaman_depan/assets/img/portfolio/cake.png') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ asset('halaman_depan/assets/img/portfolio/circus.png') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ asset('halaman_depan/assets/img/portfolio/game.png') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ asset('halaman_depan/assets/img/portfolio/safe.png') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="{{ asset('halaman_depan/assets/img/portfolio/submarine.png') }}" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {{-- </header> --}}
+    {{-- </div> --}}
+    {{-- </header> --}}
+    
+    <script src="/app/assets/vendors/datatables/jquery.dataTables.min.js"></script>
+    <script src="/app/assets/vendors/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="/app/assets/js/pages/datatables.js"></script>
+    <script src="/app/assets/vendors/select2/select2.min.js"></script>
+    <script src="/app/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="/app/assets/vendors/quill/quill.min.js"></script>
+    <script src="/app/assets/js/pages/form-elements.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+
+    <!-- Core JS -->
+    <script src="/app/assets/js/app.min.js"></script>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

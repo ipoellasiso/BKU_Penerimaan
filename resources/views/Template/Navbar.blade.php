@@ -1,6 +1,7 @@
 <div class="header">
     <div class="logo logo-dark">
         <a href="index.html">
+            {{-- <h6>SIPETANDA</h6> --}}
             {{-- <img src="/app/assets/images/logo/logo3.png" alt="Logo"> --}}
             {{-- <img class="logo-fold" src="/app/assets/images/logo/logo-fold3.png" alt="Logo"> --}}
         </a>
@@ -23,11 +24,11 @@
                     <i class="anticon"></i>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="javascript:void(0);" data-toggle="modal" data-target="#search-drawer">
                     <i class="anticon anticon-search"></i>
                 </a>
-            </li>
+            </li> --}}
             <li>
                 <a href="javascript:void(0);" data-toggle="modal" data-target="#quick-view">
                     <i class="anticon anticon-appstore"></i>

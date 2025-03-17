@@ -103,33 +103,14 @@
                 <ul class="dropdown-menu">
                     <li class="nav-item dropdown">
                         <a href="javascript:void(0);">
-                            <span>Data Pajak</span>
+                            <span>Penerimaan</span>
                             <span class="arrow">
                                 <i class="arrow-icon"></i>
                             </span>
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="app-e-commerce-order-list.html">LS</a>
-                            </li>
-                            <li>
-                                <a href="app-e-commerce-order-list.html">GU</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="javascript:void(0);">
-                            <span>Data Potongan</span>
-                            <span class="arrow">
-                                <i class="arrow-icon"></i>
-                            </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="app-e-commerce-order-list.html">BPJS</a>
-                            </li>
-                            <li>
-                                <a href="app-e-commerce-order-list.html">TASPEN</a>
+                                <a href="app-e-commerce-order-list.html">Realisasi</a>
                             </li>
                         </ul>
                     </li>

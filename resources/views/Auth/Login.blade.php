@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Simelajang - {{ $title }}</title>
+    <title>Sipetanda - {{ $title }}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="/app/assets/images/logo/favicon3.png">
@@ -27,7 +27,7 @@
                             <div class="card shadow-lg">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between m-b-30">
-                                        <img class="img-fluid" alt="" src="/app/assets/images/logo/logo3.png">
+                                        {{-- <img class="img-fluid" alt="" src="/app/assets/images/logo/logo3.png"> --}}
                                         <h2 class="m-b-0">Login</h2>
                                     </div>
                                     <form method="POST" class="my-login-validation" action="/cek_login">
@@ -63,13 +63,10 @@
                     </div>
                 </div>
                 <div class="d-none d-md-flex p-h-40 justify-content-between">
-                    <span class="">© 2019 ThemeNate</span>
+                    <span class="">Copyright © {{ date('Y')}} Sipetanda</span>
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a class="text-dark text-link" href="">Legal</a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="text-dark text-link" href="">Privacy</a>
+                            <a class="text-dark text-link" href="">Badan Pengelola Keuangan dan Aset Daerah (BPKAD) Kota Palu</a>
                         </li>
                     </ul>
                 </div>

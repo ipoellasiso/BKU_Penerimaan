@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BkuController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JenispajakController;
 use App\Http\Controllers\OpdController;
 use App\Http\Controllers\Pajakls1Controller;
@@ -27,9 +28,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Halaman_Depan.index');
-});
+Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', function () {
+//     return view('Halaman_Depan.index');
+// });
 
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/cek_login', [AuthController::class, 'cek_login']);
@@ -72,7 +74,7 @@ Route::post('bku', [BkuController::class, 'import'])->name('bku.import')->middle
 
 // ======= REALISASI =======
 Route::get('/tampilrealisasi', [RealisasiController::class, 'index'])->name('realisasi.index')->middleware('auth:web','checkRole:Admin');
-Route::get('/tampilrealisasi/{id}/tampilawal', [RealisasiController::class, 'tampilrealisasi'])->name('realisasi.tampil')->middleware('auth:web','checkRole:Admin');
+// Route::get('/tampilrealisasidihome', [RealisasiController::class, 'tampilhome'])->name('realisasihome.index');
 
 // ======= ANGGARAN =======
 Route::get('/tampilanggaran', [AnggaranController::class, 'index'])->middleware('auth:web','checkRole:Admin');
