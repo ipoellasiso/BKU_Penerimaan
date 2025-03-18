@@ -208,7 +208,7 @@ class RealisasiController extends Controller
 
             // == Dana Transfer ==
             'total_pt'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket1', '4.2')->sum('nilai_transaksi'),
-            'total_ptpp'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket2', '4.2.01')->sum('nilai_transaksi'),
+            'total_ptpd'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket2', '4.2.01')->sum('nilai_transaksi'),
 
             // DBH
 
