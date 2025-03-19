@@ -118,6 +118,12 @@ class RealisasiController extends Controller
             'tanggaran_llppengembalianp3'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.no_rekening', '4.2.02.02.02.1112')->sum('nilai'),
             'tanggaran_llppengembalianhtp'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.no_rekening', '4.2.02.02.02.1113')->sum('nilai'),
 
+            // PENDAPATAN TRANSFER
+            // DBH PUSAT
+            'tanggaran_pt'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.ket1', '4.2')->sum('nilai'),
+            'tanggaran_ptpd'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.ket2', '4.2.01')->sum('nilai'),
+            'tanggaran_ptdbhpu'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.ket3', '4.2.01.07')->sum('nilai'),
+
 
             // == REALISASI ==
             // == PAD ==
@@ -209,6 +215,7 @@ class RealisasiController extends Controller
             // == Dana Transfer ==
             'total_pt'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket1', '4.2')->sum('nilai_transaksi'),
             'total_ptpd'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket2', '4.2.01')->sum('nilai_transaksi'),
+            'total_ptdbhpu'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket3', '4.2.01.07')->sum('nilai_transaksi'),
 
             // DBH
 
