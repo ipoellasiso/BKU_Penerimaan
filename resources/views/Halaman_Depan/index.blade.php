@@ -142,7 +142,9 @@
                                                 <span> {{ number_format($tanggaran_pad - $total_pad, 2) }}</span>
                                             </div>
                                             <div class="col-1 table-bordered" align="right">
-                                                <span> {{ number_format($total_pad / $tanggaran_pad * 100, 2) }} %</span>
+                                                @if ($total_pad > 0 && $tanggaran_pad > 0)
+                                                    <span> {{ number_format($total_pad / $tanggaran_pad * 100, 2) }} %</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -165,7 +167,9 @@
                                                     <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
                                                 </div>
                                                 <div class="col-1 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                    @if ($total_pd > 0 && $tanggaran_pd > 0)
+                                                        <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -1713,16 +1717,18 @@
                                                 <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Transfer</b>
                                             </div>
                                             <div class="col-2 table-bordered" align="right">
-                                                <span> {{ number_format($tanggaran_pad, 2) }}</span>
+                                                <span> {{ number_format($tanggaran_pt, 2) }}</span>
                                             </div>
                                             <div class="col-2 table-bordered" align="right">
-                                                <span> {{ number_format($total_pad, 2) }}</span>
+                                                <span> {{ number_format($total_pt, 2) }}</span>
                                             </div>
                                             <div class="col-2 table-bordered" align="right">
-                                                <span> {{ number_format($tanggaran_pad - $total_pad, 2) }}</span>
+                                                <span> {{ number_format($tanggaran_pt - $total_pt, 2) }}</span>
                                             </div>
                                             <div class="col-1 table-bordered" align="right">
-                                                <span> {{ number_format($total_pad / $tanggaran_pad * 100, 2) }} %</span>
+                                                @if ($total_pt > 0 && $tanggaran_pt > 0)
+                                                    <span> {{ number_format($total_pt / $tanggaran_pt * 100, 2) }} %</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -1736,16 +1742,18 @@
                                                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Transfer Pemerintah Pusat</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                    <span> {{ number_format($tanggaran_ptpd, 2) }}</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                    <span> {{ number_format($total_ptpd, 2) }}</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                    <span> {{ number_format($tanggaran_ptpd - $total_ptpd, 2) }}</span>
                                                 </div>
                                                 <div class="col-1 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                    @if ($total_ptpd > 0 && $tanggaran_ptpd > 0)
+                                                        <span> {{ number_format($total_ptpd / $tanggaran_ptpd * 100, 2) }} %</span>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -1757,16 +1765,18 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dana Transfer Umum-Dana Bagi Hasil (DBH)</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpu, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpu, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpu - $total_ptdbhpu, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
+                                                                <span> {{ number_format($total_ptdbhpu / $tanggaran_ptdbhpu * 100, 2) }} %</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1776,17 +1786,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH PBB</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpupbb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpupbb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpupbb - $total_ptdbhpupbb, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpupbb > 0 && $tanggaran_ptdbhpupbb > 0)
+                                                                <span>{{ number_format($total_ptdbhpupbb / $tanggaran_ptdbhpupbb * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1795,17 +1805,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH PPh Pasal 21</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpu21, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpu21, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpu21 - $total_ptdbhpu21, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
-                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpu21 > 0 && $tanggaran_ptdbhpu21 > 0)
+                                                                <span>{{ number_format($total_ptdbhpu21 / $tanggaran_ptdbhpu21 * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1814,17 +1824,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH PPh Pasal 25 dan Pasal 29/WPOPDN</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpu25, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpu25, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpu25 - $total_ptdbhpu25, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
-                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpu25 > 0 && $tanggaran_ptdbhpu25 > 0)
+                                                                <span>{{ number_format($total_ptdbhpu25 / $tanggaran_ptdbhpu25 * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1833,17 +1843,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH Cukai Hasil Tembakau (CHT)</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpucht, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpucht, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpucht - $total_ptdbhpucht, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
-                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpucht > 0 && $tanggaran_ptdbhpucht > 0)
+                                                                <span>{{ number_format($total_ptdbhpucht / $tanggaran_ptdbhpucht * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1852,17 +1862,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Minyak Bumi</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpumb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpumb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpumb - $total_ptdbhpumb, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
-                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpumb > 0 && $tanggaran_ptdbhpumb > 0)
+                                                                <span>{{ number_format($total_ptdbhpumb / $tanggaran_ptdbhpumb * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1871,17 +1881,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Gas Bumi</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpugb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpugb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpugb - $total_ptdbhpugb, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpugb > 0 && $tanggaran_ptdbhpugb > 0)
+                                                                <span>{{ number_format($total_ptdbhpugb / $tanggaran_ptdbhpugb * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1890,17 +1900,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Mineral dan Batubara- Royalty</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdlogam, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpubb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdlogam, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpubb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdlogam - $total_pdlogam, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpubb - $total_ptdbhpubb, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdlogam > 0 && $tanggaran_pdlogam > 0)
-                                                                <span>{{ number_format($total_pdlogam / $tanggaran_pdlogam * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpubb > 0 && $tanggaran_ptdbhpubb > 0)
+                                                                <span>{{ number_format($total_ptdbhpubb / $tanggaran_ptdbhpubb * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1909,17 +1919,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Kehutanan-Provisi Sumber Daya Hutan (PSDH)</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpbb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpuhutan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpbb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpuhutan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpbb - $total_pdpbb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpuhutan - $total_ptdbhpuhutan, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpbb > 0 && $tanggaran_pdpbb > 0)
-                                                                <span>{{ number_format($total_pdpbb / $tanggaran_pdpbb * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpuhutan > 0 && $tanggaran_ptdbhpuhutan > 0)
+                                                                <span>{{ number_format($total_ptdbhpuhutan / $tanggaran_ptdbhpuhutan * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1928,17 +1938,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH SDA Perikanan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbphtb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpuperikanan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbphtb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpuperikanan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdbphtb - $total_pdbphtb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpuperikanan - $total_ptdbhpuperikanan, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdbphtb > 0 && $tanggaran_pdbphtb > 0)
-                                                                <span>{{ number_format($total_pdbphtb / $tanggaran_pdbphtb * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpuperikanan > 0 && $tanggaran_ptdbhpuperikanan > 0)
+                                                                <span>{{ number_format($total_ptdbhpuperikanan / $tanggaran_ptdbhpuperikanan * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1947,17 +1957,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DBH Sawit</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdrestoran, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdbhpusawit, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdrestoran, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdbhpusawit, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdrestoran - $total_pdrestoran, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdbhpusawit - $total_ptdbhpusawit, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdrestoran > 0 && $tanggaran_pdrestoran > 0)
-                                                                <span>{{ number_format($total_pdrestoran / $tanggaran_pdrestoran * 100, 2) }} %</span>
+                                                            @if ($total_ptdbhpusawit > 0 && $tanggaran_ptdbhpusawit > 0)
+                                                                <span>{{ number_format($total_ptdbhpusawit / $tanggaran_ptdbhpusawit * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -1970,16 +1980,18 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dana Transfer Umum-Dana Alokasi Umum (DAU)</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdau, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdau, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdau - $total_ptdau, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            @if ($total_ptdau > 0 && $tanggaran_ptdau > 0)
+                                                                <span> {{ number_format($total_ptdau / $tanggaran_ptdau * 100, 2) }} %</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1989,17 +2001,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaudau, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaudau, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaudau - $total_ptdaudau, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @if ($total_ptdaudau > 0 && $tanggaran_ptdaudau > 0)
+                                                                <span>{{ number_format($total_ptdaudau / $tanggaran_ptdaudau * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2008,17 +2020,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU Tambahan Dukungan Pendanaan Kelurahan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaukel, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaukel, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaukel - $total_ptdaukel, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
-                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @if ($total_ptdaukel > 0 && $tanggaran_ptdaukel > 0)
+                                                                <span>{{ number_format($total_ptdaukel / $tanggaran_ptdaukel * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2028,17 +2040,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Penggajian Pegawai Pemerintah dengan Perjanjian Kerja</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaup3k, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaup3k, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaup3k - $total_ptdaup3k, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
-                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @if ($total_ptdaup3k > 0 && $tanggaran_ptdaup3k > 0)
+                                                                <span>{{ number_format($total_ptdaup3k / $tanggaran_ptdaup3k * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2047,17 +2059,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU yang Ditentukan Penggunaannya Bidang Pendidikan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaupend, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaupend, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaupend - $total_ptdaupend, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
-                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @if ($total_ptdaupend > 0 && $tanggaran_ptdaupend > 0)
+                                                                <span>{{ number_format($total_ptdaupend / $tanggaran_ptdaupend * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2066,17 +2078,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU yang Ditentukan Penggunaannya Bidang Kesehatan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaukes, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaukes, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaukes - $total_ptdaukes, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
-                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @if ($total_ptdaukes > 0 && $tanggaran_ptdaukes > 0)
+                                                                <span>{{ number_format($total_ptdaukes / $tanggaran_ptdaukes * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2085,17 +2097,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAU yang Ditentukan Penggunaannya Bidang Pekerjaan Umum</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaupu, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaupu, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaupu - $total_ptdaupu, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdaupu > 0 && $tanggaran_ptdaupu > 0)
+                                                                <span>{{ number_format($total_ptdaupu / $tanggaran_ptdaupu * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2108,16 +2120,18 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dana Transfer Khusus-Dana Alokasi Khusus (DAK) Fisik</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakf, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdakf, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakf - $total_ptdakf, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            @if ($total_ptdakf > 0 && $tanggaran_ptdakf > 0)
+                                                                <span> {{ number_format($total_ptdakf / $tanggaran_ptdakf * 100, 2) }} %</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2127,17 +2141,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Pendidikan-Reguler-PAUD</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakfpaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdakfpaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdakfpaud - $total_ptdakfpaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @if ($total_ptdakfpaud > 0 && $tanggaran_ptdakfpaud > 0)
+                                                                <span>{{ number_format($total_ptdakfpaud / $tanggaran_ptdakfpaud * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2146,17 +2160,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Pendidikan-Reguler-SD</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakfsd, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdakfsd, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdakfsd - $total_ptdakfsd, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
-                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @if ($total_ptdakfsd > 0 && $tanggaran_ptdakfsd > 0)
+                                                                <span>{{ number_format($total_ptdakfsd / $tanggaran_ptdakfsd * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2165,17 +2179,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Pendidikan-Reguler-SMP</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakfsmp, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdakfsmp, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdakfsmp - $total_ptdakfsmp, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
-                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @if ($total_ptdakfsmp > 0 && $tanggaran_ptdakfsmp > 0)
+                                                                <span>{{ number_format($total_ptdakfsmp / $tanggaran_ptdakfsmp * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2185,17 +2199,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pencegahan dan Pengendalian Penyakit dan Sanitasi Total Berbasis Masyarakat</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakfpenyakitsanitasi, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdakfpenyakitsanitasi, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdakfpenyakitsanitasi - $total_ptdakfpenyakitsanitasi, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
-                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @if ($total_ptdakfpenyakitsanitasi > 0 && $tanggaran_ptdakfpenyakitsanitasi > 0)
+                                                                <span>{{ number_format($total_ptdakfpenyakitsanitasi / $tanggaran_ptdakfpenyakitsanitasi * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2204,17 +2218,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Jalan-Reguler-Jalan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakfregjalan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdakfregjalan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdakfregjalan - $total_ptdakfregjalan, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
-                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @if ($total_ptdakfregjalan > 0 && $tanggaran_ptdakfregjalan > 0)
+                                                                <span>{{ number_format($total_ptdakfregjalan / $tanggaran_ptdakfregjalan * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2223,17 +2237,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Kesehatan dan KB-Penugasan-Keluarga Berencana</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakfkb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdakfkb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdakfkb - $total_ptdakfkb, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdakfkb > 0 && $tanggaran_ptdakfkb > 0)
+                                                                <span>{{ number_format($total_ptdakfkb / $tanggaran_ptdakfkb * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2242,17 +2256,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Fisik-Bidang Kesehatan dan KB-Reguler-Penguatan Sistem Kesehatan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdakfpsk, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdakfpsk, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdakfpsk - $total_ptdakfpsk, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdakfpsk > 0 && $tanggaran_ptdakfpsk > 0)
+                                                                <span>{{ number_format($total_ptdakfpsk / $tanggaran_ptdakfpsk * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2265,16 +2279,18 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dana Transfer Khusus-Dana Alokasi Khusus (DAK) Non Fisik</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknf, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknf, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknf - $total_ptdaknf, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknf > 0 && $tanggaran_ptdaknf > 0)
+                                                                <span> {{ number_format($total_ptdaknf / $tanggaran_ptdaknf * 100, 2) }} %</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2284,17 +2300,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOS Reguler</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfbosreg, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfbosreg, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfbosreg - $total_ptdaknfbosreg, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfbosreg > 0 && $tanggaran_ptdaknfbosreg > 0)
+                                                                <span>{{ number_format($total_ptdaknfbosreg / $tanggaran_ptdaknfbosreg * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2303,17 +2319,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-TPG PNSD</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknftpg, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknftpg, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknftpg - $total_ptdaknftpg, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
-                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknftpg > 0 && $tanggaran_ptdaknftpg > 0)
+                                                                <span>{{ number_format($total_ptdaknftpg / $tanggaran_ptdaknftpg * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2322,17 +2338,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Tamsil Guru PNSD</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknftamsil, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknftamsil, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknftamsil - $total_ptdaknftamsil, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
-                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknftamsil > 0 && $tanggaran_ptdaknftamsil > 0)
+                                                                <span>{{ number_format($total_ptdaknftamsil / $tanggaran_ptdaknftamsil * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2341,17 +2357,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOP PAUD</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdppj, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfpaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdppj, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfpaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdppj - $total_pdppj, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfpaud - $total_ptdaknfpaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdppj > 0 && $tanggaran_pdppj > 0)
-                                                                <span>{{ number_format($total_pdppj / $tanggaran_pdppj * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfpaud > 0 && $tanggaran_ptdaknfpaud > 0)
+                                                                <span>{{ number_format($total_ptdaknfpaud / $tanggaran_ptdaknfpaud * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2360,17 +2376,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOP Pendidikan Kesetaraan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpat, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfkesetaraan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpat, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfkesetaraan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpat - $total_pdpat, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfkesetaraan - $total_ptdaknfkesetaraan, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpat > 0 && $tanggaran_pdpat > 0)
-                                                                <span>{{ number_format($total_pdpat / $tanggaran_pdpat * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfkesetaraan > 0 && $tanggaran_ptdaknfkesetaraan > 0)
+                                                                <span>{{ number_format($total_ptdaknfkesetaraan / $tanggaran_ptdaknfkesetaraan * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2379,17 +2395,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOKKB-Pengawasan Obat dan Makanan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfobatmakanan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfobatmakanan, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfobatmakanan - $total_ptdaknfobatmakanan, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfobatmakanan > 0 && $tanggaran_ptdaknfobatmakanan > 0)
+                                                                <span>{{ number_format($total_ptdaknfobatmakanan / $tanggaran_ptdaknfobatmakanan * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2398,17 +2414,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOKKB-Akreditasi Puskesmas</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfakreditaspkm, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfakreditaspkm, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfakreditaspkm - $total_ptdaknfakreditaspkm, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfakreditaspkm > 0 && $tanggaran_ptdaknfakreditaspkm > 0)
+                                                                <span>{{ number_format($total_ptdaknfakreditaspkm / $tanggaran_ptdaknfakreditaspkm * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2417,17 +2433,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-BOKB-KB</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfkb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfkb, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfkb - $total_ptdaknfkb, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfkb > 0 && $tanggaran_ptdaknfkb > 0)
+                                                                <span>{{ number_format($total_ptdaknfkb / $tanggaran_ptdaknfkb * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2436,17 +2452,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Dana Pelayanan Perlindungan Perempuan dan Anak</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfp3a, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfp3a, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfp3a - $total_ptdaknfp3a, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfp3a > 0 && $tanggaran_ptdaknfp3a > 0)
+                                                                <span>{{ number_format($total_ptdaknfp3a / $tanggaran_ptdaknfp3a * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2455,17 +2471,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Dana BOSP-BOS Kinerja</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfboskin, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfboskin, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfboskin - $total_ptdaknfboskin, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfboskin > 0 && $tanggaran_ptdaknfboskin > 0)
+                                                                <span>{{ number_format($total_ptdaknfboskin / $tanggaran_ptdaknfboskin * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2474,17 +2490,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Dana BOSP-BOP PAUD Reguler</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptdaknfbospaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptdaknfbospaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptdaknfbospaud - $total_ptdaknfbospaud, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptdaknfbospaud > 0 && $tanggaran_ptdaknfbospaud > 0)
+                                                                <span>{{ number_format($total_ptdaknfbospaud / $tanggaran_ptdaknfbospaud * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2493,17 +2509,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DAK Non Fisik-Dana BOK-BOK Dinas-BOK Kabupaten/Kota</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptkabkota, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdwalet, 2) }}</span>
+                                                            <span> {{ number_format($total_ptkabkota, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdwalet - $total_pdwalet, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptkabkota - $total_ptkabkota, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdwalet > 0 && $tanggaran_pdwalet > 0)
-                                                                <span>{{ number_format($total_pdwalet / $tanggaran_pdwalet * 100, 2) }} %</span>
+                                                            @if ($total_ptkabkota > 0 && $tanggaran_ptkabkota > 0)
+                                                                <span>{{ number_format($total_ptkabkota / $tanggaran_ptkabkota * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2516,16 +2532,18 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Insentif Fiskal</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptfiskal, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($total_ptfiskal, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptfiskal - $total_ptfiskal, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            @if ($total_ptfiskal > 0 && $tanggaran_ptfiskal > 0)
+                                                                <span> {{ number_format($total_ptfiskal / $tanggaran_ptfiskal * 100, 2) }} %</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2535,17 +2553,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Insentif Fiskal Untuk Penghargaan Kinerja Tahun Berjalan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptfiskalfiskal, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptfiskalfiskal, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptfiskalfiskal - $total_ptfiskalfiskal, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @if ($total_ptfiskalfiskal > 0 && $tanggaran_ptfiskalfiskal > 0)
+                                                                <span>{{ number_format($total_ptfiskalfiskal / $tanggaran_ptfiskalfiskal * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2563,16 +2581,18 @@
                                                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Transfer Antar Daerah</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                    <span> {{ number_format($tanggaran_ptad, 2) }}</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                    <span> {{ number_format($total_ptad, 2) }}</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                    <span> {{ number_format($tanggaran_ptad - $total_ptad, 2) }}</span>
                                                 </div>
                                                 <div class="col-1 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                    @if ($total_ptad > 0 && $tanggaran_ptad > 0)
+                                                        <span> {{ number_format($total_ptad / $tanggaran_ptad * 100, 2) }} %</span>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -2584,16 +2604,18 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptadbhp, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($total_ptadbhp, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptadbhp - $total_ptadbhp, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            @if ($total_ptadbhp > 0 && $tanggaran_ptadbhp > 0)
+                                                                <span> {{ number_format($total_ptadbhp / $tanggaran_ptadbhp * 100, 2) }} %</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2603,17 +2625,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak Bahan Bakar Kendaraan Bermotor</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptadbhpbbkp, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptadbhpbbkp, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptadbhpbbkp - $total_ptadbhpbbkp, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @if ($total_ptadbhpbbkp > 0 && $tanggaran_ptadbhpbbkp > 0)
+                                                                <span>{{ number_format($total_ptadbhpbbkp / $tanggaran_ptadbhpbbkp * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2622,17 +2644,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak Air Permukaan</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptbhpair, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbbnkp, 2) }}</span>
+                                                            <span> {{ number_format($total_ptbhpair, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdbbnkp - $total_pdbbnkp, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptbhpair - $total_ptbhpair, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdbbnkp > 0 && $tanggaran_pdbbnkp > 0)
-                                                                <span>{{ number_format($total_pdbbnkp / $tanggaran_pdbbnkp * 100, 2) }} %</span>
+                                                            @if ($total_ptbhpair > 0 && $tanggaran_ptbhpair > 0)
+                                                                <span>{{ number_format($total_ptbhpair / $tanggaran_ptbhpair * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2641,17 +2663,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak Rokok</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptadbhprokok, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdreklame, 2) }}</span>
+                                                            <span> {{ number_format($total_ptadbhprokok, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdreklame - $total_pdreklame, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptadbhprokok - $total_ptadbhprokok, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdreklame > 0 && $tanggaran_pdreklame > 0)
-                                                                <span>{{ number_format($total_pdreklame / $tanggaran_pdreklame * 100, 2) }} %</span>
+                                                            @if ($total_ptadbhprokok > 0 && $tanggaran_ptadbhprokok > 0)
+                                                                <span>{{ number_format($total_ptadbhprokok / $tanggaran_ptadbhprokok * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2664,16 +2686,18 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bantuan Keuangan Khusus dari Pemerintah Provinsi</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptadbkkpp, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($total_ptadbkkpp, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptadbkkpp - $total_ptadbkkpp, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            @if ($total_ptadbkkpp > 0 && $tanggaran_ptadbkkpp > 0)
+                                                                <span> {{ number_format($total_ptadbkkpp / $tanggaran_ptadbkkpp * 100, 2) }} %</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2683,17 +2707,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bantuan Keuangan Khusus dari Pemerintah Daerah Provinsi</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_ptadbkkpp2, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($total_ptadbkkpp2, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_ptadbkkpp2 - $total_ptadbkkpp2, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @if ($total_pdpkb > 0 && $tanggaran_ptadbkkpp2 > 0)
+                                                                <span>{{ number_format($total_ptadbkkpp2 / $tanggaran_ptadbkkpp2 * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -2713,16 +2737,18 @@
                                                 <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lain-Lain Pendapatan Daerah Yang Sah</b>
                                             </div>
                                             <div class="col-2 table-bordered" align="right">
-                                                <span> {{ number_format($tanggaran_pad, 2) }}</span>
+                                                <span> {{ number_format($tanggaran_llpdys, 2) }}</span>
                                             </div>
                                             <div class="col-2 table-bordered" align="right">
-                                                <span> {{ number_format($total_pad, 2) }}</span>
+                                                <span> {{ number_format($total_llpdys, 2) }}</span>
                                             </div>
                                             <div class="col-2 table-bordered" align="right">
-                                                <span> {{ number_format($tanggaran_pad - $total_pad, 2) }}</span>
+                                                <span> {{ number_format($tanggaran_llpdys - $total_llpdys, 2) }}</span>
                                             </div>
                                             <div class="col-1 table-bordered" align="right">
-                                                <span> {{ number_format($total_pad / $tanggaran_pad * 100, 2) }} %</span>
+                                                @if ($total_llpdys > 0 && $tanggaran_llpdys > 0)
+                                                    <span> {{ number_format($total_llpdys / $tanggaran_llpdys * 100, 2) }} %</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -2736,16 +2762,18 @@
                                                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Hibah</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                    {{-- <span> {{ number_format($tanggaran_llpdyshibah, 2) }}</span> --}}
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                    {{-- <span> {{ number_format($total_llpdyshibah, 2) }}</span> --}}
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                    {{-- <span> {{ number_format($tanggaran_llpdyshibah - $total_llpdyshibah, 2) }}</span> --}}
                                                 </div>
                                                 <div class="col-1 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                    {{-- @if ($total_llpdyshibah > 0 && $tanggaran_llpdyshibah > 0) --}}
+                                                        {{-- <span> {{ number_format($total_llpdyshibah / $tanggaran_llpdyshibah * 100, 2) }} %</span> --}}
+                                                    {{-- @endif --}}
                                                 </div>
                                             </div>
                                         </div>
@@ -2757,16 +2785,18 @@
                                                             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Hibah dari Pemerintah Daerah Lainnya</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            {{-- <span> {{ number_format($tanggaran_llpdyslainya, 2) }}</span> --}}
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            {{-- <span> {{ number_format($total_llpdyslainya, 2) }}</span> --}}
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            {{-- <span> {{ number_format($tanggaran_llpdyslainya - $total_llpdyslainya, 2) }}</span> --}}
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            {{-- @if ($total_llpdyslainya > 0 && $tanggaran_llpdyslainya > 0) --}}
+                                                                {{-- <span> {{ number_format($total_llpdyslainya / $tanggaran_llpdyslainya * 100, 2) }} %</span> --}}
+                                                            {{-- @endif --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2776,18 +2806,18 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Hibah dari Pemerintah Daerah</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            {{-- <span> {{ number_format($tanggaran_llpdyslainya2, 2) }}</span> --}}
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            {{-- <span> {{ number_format($total_llpdyslainya2, 2) }}</span> --}}
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            {{-- <span>{{ number_format($tanggaran_llpdyslainya2 - $total_llpdyslainya2, 2) }}</span> --}}
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
-                                                            @endif
+                                                            {{-- @if ($total_llpdyslainya2 > 0 && $tanggaran_llpdyslainya2 > 0) --}}
+                                                                {{-- <span>{{ number_format($total_llpdyslainya2 / $tanggaran_llpdyslainya2 * 100, 2) }} %</span> --}}
+                                                            {{-- @endif --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2805,16 +2835,18 @@
                                                     <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ketentuan Peraturan Perundang-Undangan</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($tanggaran_pd, 2) }}</span>
+                                                    <span> {{ number_format($tanggaran_llpdysuu, 2) }}</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd, 2) }}</span>
+                                                    <span> {{ number_format($total_llpdysuu, 2) }}</span>
                                                 </div>
                                                 <div class="col-2 table-bordered" align="right">
-                                                    <span> {{ number_format($tanggaran_pd - $total_pd, 2) }}</span>
+                                                    <span> {{ number_format($tanggaran_llpdysuu - $total_llpdysuu, 2) }}</span>
                                                 </div>
                                                 <div class="col-1 table-bordered" align="right">
-                                                    <span> {{ number_format($total_pd / $tanggaran_pd * 100, 2) }} %</span>
+                                                    @if ($total_llpdysuu > 0 && $tanggaran_llpdysuu > 0)
+                                                        <span> {{ number_format($total_llpdysuu / $tanggaran_llpdysuu * 100, 2) }} %</span>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -2823,19 +2855,21 @@
                                                 <div class="collapsed" data-toggle="collapse" href="#collapsept321">
                                                     <div class="row">
                                                         <div class="col-5 table-bordered">
-                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Bagi Hasil Pajak</span>
+                                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kontribusi dari Sumber Lain yang Sah dan Tidak Mengikat</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_llpdysuumengikat, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($total_llpdysuumengikat, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_llpdysuumengikat - $total_llpdysuumengikat, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                            @if ($total_llpdysuumengikat > 0 && $tanggaran_llpdysuumengikat > 0)
+                                                                <span> {{ number_format($total_llpdysuumengikat / $tanggaran_llpdysuumengikat * 100, 2) }} %</span>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2845,17 +2879,17 @@
                                                             <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kontribusi dari Sumber Lain yang Sah dan Tidak Mengikat</i>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($tanggaran_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($tanggaran_llpdysmengikat2, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span> {{ number_format($total_pdpkb, 2) }}</span>
+                                                            <span> {{ number_format($total_llpdysmengikat2, 2) }}</span>
                                                         </div>
                                                         <div class="col-2 table-bordered" align="right">
-                                                            <span>{{ number_format($tanggaran_pdpkb - $total_pdpkb, 2) }}</span>
+                                                            <span>{{ number_format($tanggaran_llpdysmengikat2 - $total_llpdysmengikat2, 2) }}</span>
                                                         </div>
                                                         <div class="col-1 table-bordered" align="right">
-                                                            @if ($total_pdpkb > 0 && $tanggaran_pdpkb > 0)
-                                                                <span>{{ number_format($total_pdpkb / $tanggaran_pdpkb * 100, 2) }} %</span>
+                                                            @if ($total_llpdysmengikat2 > 0 && $tanggaran_llpdysmengikat2 > 0)
+                                                                <span>{{ number_format($total_llpdysmengikat2 / $tanggaran_llpdysmengikat2 * 100, 2) }} %</span>
                                                             @endif
                                                         </div>
                                                     </div>
