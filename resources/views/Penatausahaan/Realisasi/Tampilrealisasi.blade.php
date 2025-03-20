@@ -47,7 +47,9 @@
                                     <span> {{ number_format($tanggaran_pendapatandaerah - $total_pendapatandaerah, 2) }}</span>
                                 </div>
                                 <div class="col-1 table-bordered" align="right">
-                                    <span> {{ number_format($total_pendapatandaerah / $tanggaran_pendapatandaerah * 100, 2) }} %</span>
+                                    @if ($total_pendapatandaerah > 0 && $tanggaran_pendapatandaerah > 0)
+                                        <span> {{ number_format($total_pendapatandaerah / $tanggaran_pendapatandaerah * 100, 2) }} %</span>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -118,7 +120,9 @@
                                                         <span> {{ number_format($tanggaran_pdbapenda - $total_pdbapenda, 2) }}</span>
                                                     </div>
                                                     <div class="col-1 table-bordered" align="right">
-                                                        <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        @if ($total_pdbapenda > 0 && $tanggaran_pdbapenda > 0)
+                                                            <span> {{ number_format($total_pdbapenda / $tanggaran_pdbapenda * 100, 2) }} %</span>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
