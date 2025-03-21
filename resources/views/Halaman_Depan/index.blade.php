@@ -66,7 +66,7 @@
                 <b><h5>PEMERINTAHAN KOTA PALU</b><br>
                 <b><h5>LAPORAN TARGET DAN REALISASI PENDAPATAN DAERAH KOTA PALU</b>
                 <b><h5>TAHUN ANGGARAN 2025</h4></b>
-                <b><h5>PERIODE</h6></b>
+                <b><h5><marquee scrolldelay='300'>PERIODE</marquee></h6></b>
             </div>
             <div class="col-4">
             </div>
