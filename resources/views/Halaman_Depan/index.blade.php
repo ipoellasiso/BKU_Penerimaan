@@ -58,7 +58,7 @@
         <br><br><br><br><br><br>
         <div class="row">
             <div class="col-4">
-                <div class="avatar-image  m-h-10 m-r-29">
+                <div class="avatar-image  m-h-10 m-r-25">
                     <img src="/app/assets/images/logo/13.png"  width="15%">
                 </div>
             </div>
