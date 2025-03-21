@@ -40,7 +40,7 @@ class BkusImport implements ToModel, WithHeadingRow, WithValidation, SkipsOnFail
             'no_buku' => 'required|unique:tb_transaksi',
             'id_rekening' => 'required',
             'id_bank' => 'required',
-            'id_opd' => 'required',
+            // 'id_opd' => 'required',
         ];
     }
 }
