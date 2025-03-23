@@ -77,8 +77,8 @@
     <div class="card">
         
         <div class="card-header">
-            <h5 class="card-title">
-                    <div class="row">
+            <h5 class="card-title table table-sm table-dark">
+                    <div class="row text-white">
                         <div class="col-5" align="center">
                             <b>Uraian</b>
                         </div>
@@ -101,7 +101,7 @@
         <div class="" id="pad">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">
+                    <h5 class="card-title table table-striped table-white">
 
                         {{-- PENDAPATAN DAERAH --}}
                         <div class="collapsed" data-toggle="collapse" href="#collapsellpd">

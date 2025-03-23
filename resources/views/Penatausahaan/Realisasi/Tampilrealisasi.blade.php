@@ -5,8 +5,8 @@
     <div class="card">
         
         <div class="card-header">
-            <h5 class="card-title">
-                    <div class="row">
+            <h5 class="card-title table table-sm table-dark">
+                    <div class="row text-white">
                         <div class="col-5" align="center">
                             <b>Uraian</b>
                         </div>
@@ -29,24 +29,24 @@
         <div class="" id="pad">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">
+                    <h5 class="card-title table table-striped table-primary">
 
                         {{-- PENDAPATAN DAERAH --}}
                         <div class="collapsed" data-toggle="collapse" href="#collapsellpd">
                             <div class="row">
-                                <div class="col-5 table-bordered">
+                                <div class="col-5 border border-danger">
                                     <b>Pendapatan Daerah</b>
                                 </div>
-                                <div class="col-2 table-bordered" align="right">
+                                <div class="col-2 border border-danger" align="right">
                                     <span> {{ number_format($tanggaran_pendapatandaerah, 2) }}</span>
                                 </div>
-                                <div class="col-2 table-bordered" align="right">
+                                <div class="col-2 border border-danger" align="right">
                                     <span> {{ number_format($total_pendapatandaerah, 2) }}</span>
                                 </div>
-                                <div class="col-2 table-bordered" align="right">
+                                <div class="col-2 border border-danger" align="right">
                                     <span> {{ number_format($tanggaran_pendapatandaerah - $total_pendapatandaerah, 2) }}</span>
                                 </div>
-                                <div class="col-1 table-bordered" align="right">
+                                <div class="col-1 border border-danger" align="right">
                                     @if ($total_pendapatandaerah > 0 && $tanggaran_pendapatandaerah > 0)
                                         <span> {{ number_format($total_pendapatandaerah / $tanggaran_pendapatandaerah * 100, 2) }} %</span>
                                     @endif
