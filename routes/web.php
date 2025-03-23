@@ -78,3 +78,4 @@ Route::get('/tampilrealisasi', [RealisasiController::class, 'index'])->name('rea
 
 // ======= ANGGARAN =======
 Route::get('/tampilanggaran', [AnggaranController::class, 'index'])->middleware('auth:web','checkRole:Admin');
+Route::post('anggaran', [AnggaranController::class, 'import'])->name('anggaran.import')->middleware('auth:web','checkRole:Admin');

@@ -1,4 +1,4 @@
-<div class="modal fade" id="tambahimportbku">
+<div class="modal fade" id="tambahimportanggaran">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="userForm1" name="userForm1" enctype="multipart/form-data" action="{{ route('bku.import') }}" method="POST">
+                <form id="userForm1" name="userForm1" enctype="multipart/form-data" action="{{ route('anggaran.import') }}" method="POST">
                     @csrf
                     <div class="modal-body">
                         <input type="hidden" name="id" id="id">

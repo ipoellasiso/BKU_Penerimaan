@@ -1633,6 +1633,24 @@
                                                         @endif
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-5 table-bordered">
+                                                        <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pendapatan Dana Kapitasi JKN pada FKTP</i>
+                                                    </div>
+                                                    <div class="col-2 table-bordered" align="right">
+                                                        <span> {{ number_format($tanggaran_llpjknfktp, 2) }}</span>
+                                                    </div>
+                                                    <div class="col-2 table-bordered" align="right">
+                                                        <span> {{ number_format($total_llpjknfktp, 2) }}</span>
+                                                    <div class="col-2 table-bordered" align="right">
+                                                        <span>{{ number_format($tanggaran_llpjknfktp - $total_llpjknfktp, 2) }}</span>
+                                                    </div>
+                                                    <div class="col-1 table-bordered" align="right">
+                                                        @if ($total_llpjknfktp > 0 && $tanggaran_llpjknfktp > 0)
+                                                            <span>{{ number_format($total_llpjknfktp / $tanggaran_llpjknfktp * 100, 2) }} %</span>
+                                                        @endif
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

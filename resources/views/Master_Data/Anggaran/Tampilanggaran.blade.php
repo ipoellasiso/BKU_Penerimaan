@@ -14,7 +14,7 @@
                         <table class="table table-warning">
                             <tr>
                                 <th>Baris</th>
-                                <th>Nomor Buku Sudah Ada</th>
+                                <th>Rekening Sudah Ada</th>
                                 <th>Error</th>
                                 <th>Value</th>
                             </tr>

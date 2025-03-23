@@ -188,6 +188,8 @@ class RealisasiController extends Controller
             'tanggaran_llpdysuumengikat'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.ket3', '4.3.03.04')->sum('nilai'),
             'tanggaran_llpdysmengikat2'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.no_rekening', '4.3.03.04.01.0001')->sum('nilai'),
 
+            'tanggaran_llpjknfktp'    => AnggaranModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_anggaran.id_rekening')->where('tb_rekening.no_rekening', '4.3.03.02.01.0001')->sum('nilai'),
+
 
             // == REALISASI ==
             // == PAD ==
@@ -346,6 +348,8 @@ class RealisasiController extends Controller
             'total_llpdysuu'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket2', '4.3.03')->sum('nilai_transaksi'),
             'total_llpdysuumengikat'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.ket3', '4.3.03.04')->sum('nilai_transaksi'),
             'total_llpdysmengikat2'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.no_rekening', '4.3.03.04.01.0001')->sum('nilai_transaksi'),
+
+            'total_llpjknfktp'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.no_rekening', '4.3.03.02.01.0001')->sum('nilai_transaksi'),
 
 
         );

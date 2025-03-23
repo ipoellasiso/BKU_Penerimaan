@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\AnggaranImport;
 use App\Imports\BkusImport;
 use App\Models\bkusModel;
 use App\Models\UserModel;
@@ -55,7 +56,7 @@ class AnggaranController extends Controller
     public function import(Request $request)
     {
         $file = $request->file('file')->store('public/import');
-        $import = new BkusImport();
+        $import = new AnggaranImport();
         $import->import($file);
 
         // dd($import->failures());
@@ -64,7 +65,7 @@ class AnggaranController extends Controller
             return back()->withFailures($import->failures())->with('error', 'beberapa data sudah ada dan data belum ada akan disimpan ');
         }
 
-        return redirect('/tampilbku')->with('success', 'Data Berhasil di import');
+        return redirect('/tampilanggaran')->with('success', 'Data Berhasil di import');
     }
 
 }
