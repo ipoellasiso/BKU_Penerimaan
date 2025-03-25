@@ -8,6 +8,8 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\BkuController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JenispajakController;
+use App\Http\Controllers\KamarController;
+use App\Http\Controllers\KamarControlleruser;
 use App\Http\Controllers\OpdController;
 use App\Http\Controllers\Pajakls1Controller;
 use App\Http\Controllers\PajaklsController;
@@ -79,3 +81,9 @@ Route::get('/tampilrealisasi', [RealisasiController::class, 'index'])->name('rea
 // ======= ANGGARAN =======
 Route::get('/tampilanggaran', [AnggaranController::class, 'index'])->middleware('auth:web','checkRole:Admin');
 Route::post('anggaran', [AnggaranController::class, 'import'])->name('anggaran.import')->middleware('auth:web','checkRole:Admin');
+
+// ======= REKAPAN REKENING =======
+Route::get('/tampilrekapanrek', [KamarController::class, 'index'])->middleware('auth:web','checkRole:Admin');
+
+// ======= REKAPAN REKENING USER =======
+Route::get('/tampilrekapanrekuser', [KamarControlleruser::class, 'index'])->middleware('auth:web','checkRole:User');
