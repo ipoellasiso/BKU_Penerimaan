@@ -169,6 +169,15 @@ class UserController extends Controller
         return response()->json(['success'=>'Data Berhasil Diaktifkan']);
     }
 
+    public function getDataopd()
+    {
+        $opd = DB::table('tb_opd')
+        ->select('id', 'nama_opd')
+        ->get();
+        return response()->json($opd);
+        // return view('Penatausahaan.Pajakls.Pajakls', compact('akunpajak'));
+    }
+
     public function destroy($id)
     {
         $data = UserModel::where('id',$id)->first(['gambar']);

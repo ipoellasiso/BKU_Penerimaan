@@ -14,11 +14,11 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label>OPD</label>
-                                        <select class="form-control" name="id_opd" id="id_opd" value="">
+                                        <select class="select2" name="id_opd" id="opd1" value="">
                                             <option value="" hidden>-- Pilih OPD --</option>
-                                            <option value="1">Dinas Pendidikan dan Kebudayaan</option>
+                                            {{-- <option value="1">Dinas Pendidikan dan Kebudayaan</option>
                                             <option value="2">Dinas Kesehatan</option>
-                                            <option value="3">Dinas Pekerjaan Umum</option>
+                                            <option value="3">Dinas Pekerjaan Umum</option> --}}
                                         </select>
                                     </div>
                                     <div class="form-group">

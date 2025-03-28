@@ -63,10 +63,10 @@
                     </div>
                 </div>
                 <div class="d-none d-md-flex p-h-40 justify-content-between">
-                    <span class="">Copyright © {{ date('Y')}} Sipetanda</span>
+                    <span class="">Copyright © {{ date('Y')}} BPKAD</span>
                     <ul class="list-inline">
                         <li class="list-inline-item">
-                            <a class="text-dark text-link" href="">Badan Pengelola Keuangan dan Aset Daerah (BPKAD) Kota Palu</a>
+                            <a class="text-dark text-link" href="">Sipetanda V.1.0</a>
                         </li>
                     </ul>
                 </div>

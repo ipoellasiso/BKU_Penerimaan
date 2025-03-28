@@ -247,6 +247,21 @@ function readURL(input, id) {
     }
 }
 
+    $(document).ready(function() {
+        $.ajax({
+            url: '/user/opd',
+            method: 'GET',
+            success: function(data) {
+                $.each(data, function(index, opd) {
+                    $('#opd1').append(new Option(opd.nama_opd, opd.id)); // Ganti 'nama' dengan kolom yang sesuai
+                });
+            },
+            error: function(xhr) {
+                console.error(xhr);
+            }
+        });
+    });
+
 </script>
 
 <script>
