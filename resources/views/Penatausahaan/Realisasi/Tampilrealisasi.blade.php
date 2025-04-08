@@ -1642,6 +1642,7 @@
                                                     </div>
                                                     <div class="col-2 table-bordered" align="right">
                                                         <span> {{ number_format($total_llpjknfktp, 2) }}</span>
+                                                    </div>
                                                     <div class="col-2 table-bordered" align="right">
                                                         <span>{{ number_format($tanggaran_llpjknfktp - $total_llpjknfktp, 2) }}</span>
                                                     </div>
