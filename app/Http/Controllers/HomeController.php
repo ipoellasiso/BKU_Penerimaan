@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AnggaranModel;
 use App\Models\bkusModel;
+use App\Models\PeriodeModel;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -336,6 +337,8 @@ class HomeController extends Controller
             'total_llpdysmengikat2'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.no_rekening', '4.3.03.04.01.0001')->sum('nilai_transaksi'),
 
             'total_llpjknfktp'    => bkusModel::join('tb_rekening', 'tb_rekening.id_rekening', 'tb_transaksi.id_rekening')->where('tb_rekening.no_rekening', '4.3.03.02.01.0001')->sum('nilai_transaksi'),
+
+            'periode1'       => DB::table('tb_periode_realisasi')->select('periode', 'awal')->first(),
 
 
         );
