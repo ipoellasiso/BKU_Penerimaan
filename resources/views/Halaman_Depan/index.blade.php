@@ -57,18 +57,18 @@
 
         <br><br><br><br><br><br>
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <div class="avatar-image  m-h-10 m-r-25">
                     <img src="/app/assets/images/logo/13.png"  width="15%">
                 </div>
             </div>
-            <div class="col-4 text-center">
+            <div class="col-6 text-center">
                 <b><h5>PEMERINTAHAN KOTA PALU</b><br>
                 <b><h5>LAPORAN TARGET DAN REALISASI PENDAPATAN DAERAH KOTA PALU</b>
                 <b><h5>TAHUN ANGGARAN 2025</h4></b>
                 <b><h5>PERIODE {{ date('d', strtotime($periode1->awal)) }} {{ date('M', strtotime($periode1->awal)) }} {{ date('Y', strtotime($periode1->awal)) }} s/d {{ date('d', strtotime($periode1->periode)) }} {{ date('M', strtotime($periode1->periode)) }} {{ date('Y', strtotime($periode1->periode)) }} </h6></b>
             </div>
-            <div class="col-4">
+            <div class="col-3">
             </div>
         </div>
         <br><br>
