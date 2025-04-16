@@ -50,6 +50,14 @@ class BkuController extends Controller
             'total_feb_bpd'        => bkusModel::where('id_bank', '2')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-02-01', '2025-02-28'])->sum('nilai_transaksi'),
             'total_feb_btn'        => bkusModel::where('id_bank', '3')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-02-01', '2025-02-28'])->sum('nilai_transaksi'),
             'total_feb'            => bkusModel::whereBetween('tb_transaksi.tgl_transaksi', ['2025-02-01', '2025-02-28'])->sum('nilai_transaksi'),
+            'total_apr_mandiri'    => bkusModel::where('id_bank', '1')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-04-01', '2025-04-30'])->sum('nilai_transaksi'),
+            'total_apr_bpd'        => bkusModel::where('id_bank', '2')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-04-01', '2025-04-30'])->sum('nilai_transaksi'),
+            'total_apr_btn'        => bkusModel::where('id_bank', '3')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-04-01', '2025-04-30'])->sum('nilai_transaksi'),
+            'total_apr'            => bkusModel::whereBetween('tb_transaksi.tgl_transaksi', ['2025-04-01', '2025-04-30'])->sum('nilai_transaksi'),
+            'total_mei_mandiri'    => bkusModel::where('id_bank', '1')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-05-01', '2025-05-31'])->sum('nilai_transaksi'),
+            'total_mei_bpd'        => bkusModel::where('id_bank', '2')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-05-01', '2025-05-31'])->sum('nilai_transaksi'),
+            'total_mei_btn'        => bkusModel::where('id_bank', '3')->whereBetween('tb_transaksi.tgl_transaksi', ['2025-05-01', '2025-05-31'])->sum('nilai_transaksi'),
+            'total_mei'            => bkusModel::whereBetween('tb_transaksi.tgl_transaksi', ['2025-05-01', '2025-05-31'])->sum('nilai_transaksi'),
         );
 
         if ($request->ajax()) {
